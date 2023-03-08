@@ -61,8 +61,6 @@ EPICS
 
 
 
-
-
 -0-
 
 Bavarian Cristus is a website created by Luciano Fernandez for the purpouse of allowing all people interested in Jesus Christ, that also enjoy to take and share photos, and happen to be residents or visiting Bavaria, to share their pictures and thoughts about images shared by others.
