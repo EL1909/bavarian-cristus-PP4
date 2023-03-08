@@ -1,108 +1,131 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Bavarian Christ
 
-Welcome USER_NAME,
+Put ourselves in the user's position
+Anticipate the user's wants and needs
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+Why would a user want to visit our blog?
+    - To see photos posted by other users on this particular topic with no hassel
+    - To publish their own taken photos
+    - To discover places those photos are tagged on and planning trips
+    - To share opinions on this images with the community
+    - To easily log in using social media profiles
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+What will make them return
+    - The interaction with other members
+    - Look for new images
 
-## Gitpod Reminders
+What do i want to see when I visit a blog
+    - Images posted from users in the main page
+    - Comments from the community on each photo post
+    - Map with location of the statue
+    - See how many people looked/liked the post
+    - Approve/Deny photos before posting
+    - Get information about the camera used to get the image..?
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+What would make me return
+    - Answer comments from other community members
+    - have a profile with a gallery of my own taken images
 
-`python3 -m http.server`
 
-A blue button should appear to click: _Make Public_,
+How do i develop a blog app that provides all this functionality to a user ? 
 
-Another blue button should appear to click: _Open Browser_.
+Users: All visitors to our domain
+Members: registered users authenticated by email
+Admin: Super user
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
 
-A blue button should appear to click: _Make Public_,
+EPICS
+    - User Storys
 
-Another blue button should appear to click: _Open Browser_.
+- I can see photos posted by other users on this particular topic with no hassel.
+    - As a user, I can see photos posted by other users so that i get interest on becoming a member.
+    - As a user, I can see comments on each photo post so that i get interest on becoming a member.
+        
+- To be part of a community.
+    - As a user, i can easily log in using email and social media profiles, so that i become a member.
+    - As a member, I can publish my own taken photos so that users can see them.
+    - As a member, I can writte comments so that i can share opinions on this images.
+    - As a member, I can like/unlike photos so that i can share opinions on this images.
+    - As a member, I can like/unlike comments so that i can share opinions on this images.
+    - As a member, I can tag a point in the Map with location of the statue so that others can plan a visit.
+    - As a member, I can see how many people looked/liked the post so that i get interest in keep posting.
+    - As a member, I can have a profile with a gallery of my own taken images so that i can store and share in other social media platforms.
+    - As a member, I can share images so that i share in other social media platforms.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+- Discover the places those photos were taken on and planning trips.
+    - As a user, I can see a tag in the map where the photo was taken, so that i can plan a visit.
 
-To log into the Heroku toolbelt CLI:
+- Managing and mantainig the website
+    - As an Admin, I can Approve/Deny photos before posting so that i can review contents quality.
+    - As an Admin, I can post members photos to our own Social media so that they have more visibility.
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
 
-------
 
-## Release History
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+-0-
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+Bavarian Cristus is a website created by Luciano Fernandez for the purpouse of allowing all people interested in Jesus Christ, that also enjoy to take and share photos, and happen to be residents or visiting Bavaria, to share their pictures and thoughts about images shared by others.
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+Users of the website will be able to see images and in future versions could also upload their own photos as long as they are taken in Bavaria. 
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+They will be also able to tag the location of the photo. This will allow visitors to find exactly where the statue is located.
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+<img src="assets/images/">
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+In the home page, visitors can have a clear idea of what the website was made for.
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+the Gallery section contains images uploaded by the developer. in future versions could be possible to comment, like and share images, as well as fin the real location of the statue.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+The Post page, is intendet to allow users to share pictures taken by themselves, to be posted in the gallery.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+## TESTING 
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+- The website have been tested in Chrome, Safari and Firefox explorer.
+- Navigation, header and menu elemets are confirmed and functional.
+- Post section is not properly working yet, only the layout was intendet for this version. 
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+the website have no unfixed bugs.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+## VALIDATOR TESTING
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+- HTML: No errors returned when passing through the official W3C validator.
+- CSS: No errors were found when passing through the official (Jigswaw) validator.
+- Accesibility: 
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+## DEPLOYMENT
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+The site was deployed to Github Pages. The steps to deploy are as follows:
+1. In Github Repository, navigate to the settings tab.
+2. From the source section dropdown menu, select the master branch.
+3. Once the masterbranch has been selected, the page provide the link to the complete website.
 
-------
+## FEATURES
 
-## FAQ about the uptime script
+### Navigation
+- Featured at the top of the page, the navigation shows the website name in the left corner BAVARIAN CHRISTUS, that links to the home page.
+- In the top-right cornet, users can find the website menu; with three links redirecting to "Home", "Gallery' and "Post" pages respectively, each one has a diferent page.
 
-**Why have you added this script?**
+### Design and colors
+- Navigation fonts tend to be sober and respectful; text style contrast with solid background colors.
+- Color selection is intended to remember colors at church and in general catholic styles.
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+## CREDITS
 
-**How will this affect me?**
+Content
+- Noto and Dosis fonts were linked from Google Fonts.
+- Icons used for social network links and as decoration in Post submit section are taken from fontawesome.com
+- I have utilized [Yoelvis Mulen's](https://www.youtube.com/@YoelvisM/featured) channel in order to discover how to use CSS grids, however im lacking of time with the other projects too and i havent got the time to properly learn it. 
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+Media
+- All text and images belong to the developer.
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+## Acknowledgement
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+Actually, im not sure if i did use the grids correctly on my website. I will walk thru this lessons again. 
 
-**So….?**
+I am struggling with dates; im having 5 months to do this classes (wich i found amazing), however i haven't got enough time to work in this new knowledge and keeping up with the schedule.
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
 
-**Can I opt out?**
+Given the time and with a lot of practice, i'm confident i will become a software developer; even though i have beel failing all projects so far.
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
