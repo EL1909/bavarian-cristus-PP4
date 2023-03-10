@@ -63,6 +63,11 @@ EPICS
 
 -0-
 
+
+“Connect Cloudinary,  add config variables Database_url, Secret_key, Cloudinary_url, Port and Disable_collectstatic, and cloudinary to apps;  add staticfiles parameters, allowed hosts and template_dir in settings.py, create media, template and static folders and Procfile”
+
+-0-
+
 Bavarian Cristus is a website created by Luciano Fernandez for the purpouse of allowing all people interested in Jesus Christ, that also enjoy to take and share photos, and happen to be residents or visiting Bavaria, to share their pictures and thoughts about images shared by others.
 
 Users of the website will be able to see images and in future versions could also upload their own photos as long as they are taken in Bavaria. 
