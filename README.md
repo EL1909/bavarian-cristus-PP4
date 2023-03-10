@@ -66,6 +66,31 @@ EPICS
 
 “Connect Cloudinary,  add config variables Database_url, Secret_key, Cloudinary_url, Port and Disable_collectstatic, and cloudinary to apps;  add staticfiles parameters, allowed hosts and template_dir in settings.py, create media, template and static folders and Procfile”
 
+
+I tried migrate my created classes but terminal requested me to instal "Pillow" for Python to handle images - did not added via pip3 freeze
+
+
+
+installed summernote and added to requirements via pip3 freeze, as editor for comments in posts.
+
+
+I wanted to update my model for comments by adding name and email fields, i was getting this error once i tried to migrate
+
+python3 manage.py makemigrations
+You are trying to add a non-nullable field 'name' to comment without a default; we can't do that (the database needs something to populate existing rows).
+Please select a fix:
+ 1) Provide a one-off default now (will be set on all existing rows with a null value for this column)
+ 2) Quit, and let me add a default in models.py
+Select an option: 1
+Please enter the default value now, as valid Python
+The datetime and django.utils.timezone modules are available, so you can do e.g. timezone.now
+Type 'exit' to exit this prompt
+>>> True
+
+i solve it by typing 1, then true
+
+
+
 -0-
 
 Bavarian Cristus is a website created by Luciano Fernandez for the purpouse of allowing all people interested in Jesus Christ, that also enjoy to take and share photos, and happen to be residents or visiting Bavaria, to share their pictures and thoughts about images shared by others.
