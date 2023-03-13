@@ -56,6 +56,7 @@ EPICS
     - As a user, I can see a tag in the map where the photo was taken, so that i can plan a visit.
 
 - Managing and mantainig the website
+    - As an Admin I can create post so that they can be showed in the website
     - As an Admin, I can Approve/Deny photos before posting so that i can review contents quality.
     - As an Admin, I can post members photos to our own Social media so that they have more visibility.
 

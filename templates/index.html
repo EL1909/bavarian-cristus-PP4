@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="image-container">
+      <h2>Image Posts</h2>
+    <ul>
+        {% for imagepost in imagepost_list %}
+            <li>{{ imagepost.featured_image.url }}</li>
+        {% endfor %}
+    </ul>
+    </div>
+{% endblock %}
