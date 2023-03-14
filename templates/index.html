@@ -1,12 +1,13 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="image-container">
-      <h2>Image Posts</h2>
-    <ul>
-        {% for imagepost in imagepost_list %}
-            <li>{{ imagepost.featured_image.url }}</li>
-        {% endfor %}
-    </ul>
+    {% for imagepost in imagepost_list %}        
+    <div>
+      <h2><a href="#">{{ imagepost.title }}</a></h2>
+      <img src="{{ imagepost.image.url }}" width="50%" alt="{{ imagepost.title }}">
+      <p class="card-text">{{ imagepost.excerpt }}</p>
+      <p class="card-text text-muted h6">{{ imagepost.created_on }}</p>
+      <p><i class="far fa-heart"></i> x {{ imagepost.number_of_likes }}</p>
     </div>
+  {% endfor %}
 {% endblock %}
