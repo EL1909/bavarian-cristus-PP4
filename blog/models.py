@@ -35,8 +35,8 @@ class ImagePost(models.Model):
 class Comment(models.Model):
 
     text = models.TextField()
-    image_post = models.ForeignKey(ImagePost, on_delete=models.CASCADE, related_name='posted')
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='comments')
+    image_post = models.ForeignKey(ImagePost, on_delete=models.CASCADE, related_name='comments')
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='posted')
     name = models.CharField(max_length=80)
     email = models.EmailField(default=True)
     created_on = models.DateTimeField(auto_now_add=True)
@@ -46,4 +46,4 @@ class Comment(models.Model):
         ordering = ['created_on']
 
     def __str__(self):
-        return f"Comment {self.body} by {self.name}"
+        return f"Comment {self.text} by {self.name}"

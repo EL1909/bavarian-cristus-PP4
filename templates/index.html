@@ -3,7 +3,7 @@
 {% block content %}
     {% for imagepost in imagepost_list %}        
     <div>
-      <h2><a href="#">{{ imagepost.title }}</a></h2>
+      <h2><a href="{% url 'post_detail' imagepost.slug %}">{{ imagepost.title }}</a></h2>
       <img src="{{ imagepost.image.url }}" width="50%" alt="{{ imagepost.title }}">
       <p class="card-text">{{ imagepost.excerpt }}</p>
       <p class="card-text text-muted h6">{{ imagepost.created_on }}</p>
