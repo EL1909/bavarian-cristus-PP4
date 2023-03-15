@@ -92,7 +92,9 @@ i solve it by typing 1, then true
 
 
 
-15.03.23 - Allauth installet to create user login functionality and updated to requirements.txt
+15.03.23    - Allauth installed to create user login functionality and updated to requirements.txt
+            - Crispyforms installed to allow members comment functionality and updated to requirements.txt. After instalation and setup i wasnt able to render the website; i went thru the documentation and installed $ pip install crispy-bootstrap5 for bootstrap5.... and it worked
+
 
 
 
