@@ -1,4 +1,4 @@
-# Bavarian Christ
+# Bavarian Cristus
 
 Put ourselves in the user's position
 Anticipate the user's wants and needs
@@ -95,7 +95,7 @@ i solve it by typing 1, then true
 15.03.23    - Allauth installed to create user login functionality and updated to requirements.txt
             - Crispyforms installed to allow members comment functionality and updated to requirements.txt. After instalation and setup i wasnt able to render the website; i went thru the documentation and installed $ pip install crispy-bootstrap5 for bootstrap5.... and it worked
 
-
+16.03.23    - IM having a bug related to the secons screenshot, apparently im not refering to any image post in my views... apparently im trying to post the coment without specifiying the user_id of the commenter... i did dolve it by modifiyng my comment-post view and adding arguments for user and image_post instead post.......
 
 
 -0-
