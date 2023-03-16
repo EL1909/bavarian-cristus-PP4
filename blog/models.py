@@ -36,7 +36,7 @@ class Comment(models.Model):
 
     text = models.TextField()
     image_post = models.ForeignKey(ImagePost, on_delete=models.CASCADE, related_name='comments')
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='posted')
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='comments_made')
     name = models.CharField(max_length=80)
     email = models.EmailField(default=True)
     created_on = models.DateTimeField(auto_now_add=True)
