@@ -5,17 +5,12 @@
 {% load crispy_forms_tags %}
 
 <div>
-    <div>
-        <!-- Post title goes in these h1 tags -->
-        <h2><a href="#">{{ imagepost.title }}</a></h2>
-        <!-- Post author goes before the | the post's created date goes after -->
-        <img src="{{ imagepost.image.url }}" width="50%" alt="{{ imagepost.title }}">
-    </div>
-    <div class="d-none d-md-block col-md-6 masthead-image">
-        <img src=" {{ imagepost.image.url }}" width="100%">
-    </div>
+  <img src="{{ post.image.url }}" width="100%" alt="{{ imagepost.title }}">
+  <!-- Post title goes in these h2 tags -->
+  <h2><a href="#">{{ post.title }}</a></h2>
+  
+  <p class="card-text">{{ post.excerpt }}</p> 
 </div>
-
 <div class="container">
     <div class="row">
         <div class="col card mb-4  mt-3 left  top">
@@ -26,7 +21,6 @@
                     {{ imagepost.content | safe }}
                 </p>
                 <div class="row">
-
                     <div class="col-1">
                         <strong>
                             {% if user.is_authenticated %}
@@ -48,17 +42,13 @@
                     <div class="col-1">
                         {% with comments.count as total_comments %}
                         <strong class="text-secondary"><i class="far fa-comments"></i>
-                            <!-- Our total_comments variable goes before the closing strong tag -->
-                            {{ total_comments }}</strong>
+                        <!-- Our total_comments variable goes before the closing strong tag -->
+                        {{ total_comments }}</strong>
                         {% endwith %}
                     </div>
+                    <p class="card-text text-muted h6">{{ post.created_on }}</p>
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <hr>
         </div>
     </div>
     <div class="row">
@@ -73,7 +63,7 @@
                         {{ comment.name }}
                         <span class=" text-muted font-weight-normal">
                             <!-- The comment's created date goes here -->
-                            {{ comment.created_on }}
+                        {{ comment.created_on }}
                         </span> wrote:
                     </p>
                     <!-- The body of the comment goes before the | -->
@@ -86,19 +76,19 @@
         <div class="col-md-4 card mb-4  mt-3 ">
             <div class="card-body">
                 {% if commented %}
-                <div class="alert alert-success" role="alert">
-                    Your comment is awaiting approval
-                </div>
+                    <div class="alert alert-success" role="alert">
+                        Your comment is awaiting approval
+                    </div>
                 {% else %}
-                {% if user.is_authenticated %}
-                <h3>Leave a comment:</h3>
-                <p>Posting as: {{ user.username }}</p>
-                <form method="post" style="margin-top: 1.3em;">
-                    {{ comment_form | crispy }}
-                    {% csrf_token %}
-                    <button type="submit" class="btn btn-signup btn-lg">Submit</button>
-                </form>
-                {% endif %}
+                    {% if user.is_authenticated %}
+                        <h3>Leave a comment:</h3>
+                        <p>Posting as: {{ user.username }}</p>
+                        <form method="post" style="margin-top: 1.3em;">
+                        {{ comment_form | crispy }}
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-signup btn-lg">Submit</button>
+                        </form>
+                    {% endif %}
                 {% endif %}
             </div>
         </div>
@@ -109,11 +99,11 @@
 <div class="col d-none d-lg-block">
     <h3 class="text-white">Bavarian Cristus</h3>
     <hr>
-    <!-- Embeded map 
+    <!-- Embeded map -->
      <iframe src="https://www.google.com/maps/d/embed?mid=1bTDkwVh2jAzao1wn9MsPic9ksgjsrocJ&ehbc=2E312F"
         width="640" height="480"></iframe>
-</div> -->
+</div> 
 <hr>
 
-{% endblock content %}
+{% endblock %}
 
