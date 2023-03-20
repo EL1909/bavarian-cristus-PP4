@@ -1,20 +1,18 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} 
+
+{% block content %}
 
 {% load crispy_forms_tags %}
 
-<div class="masthead">
-    <div class="container">
-        <div class="row g-0">
-            <div class="col-md-6 masthead-text">
-                <!-- Post title goes in these h1 tags -->
-                <h2><a href="#">{{ imagepost.title }}</a></h2>
-                <!-- Post author goes before the | the post's created date goes after -->
-                <img src="{{ imagepost.image.url }}" width="50%" alt="{{ imagepost.title }}">
-            </div>
-            <div class="d-none d-md-block col-md-6 masthead-image">
-                <img src=" {{ imagepost.image.url }}" width="100%">
-            </div>
-        </div>
+<div>
+    <div>
+        <!-- Post title goes in these h1 tags -->
+        <h2><a href="#">{{ imagepost.title }}</a></h2>
+        <!-- Post author goes before the | the post's created date goes after -->
+        <img src="{{ imagepost.image.url }}" width="50%" alt="{{ imagepost.title }}">
+    </div>
+    <div class="d-none d-md-block col-md-6 masthead-image">
+        <img src=" {{ imagepost.image.url }}" width="100%">
     </div>
 </div>
 
@@ -107,4 +105,15 @@
     </div>
 </div>
 
+  <!-- Bottom post-->
+<div class="col d-none d-lg-block">
+    <h3 class="text-white">Bavarian Cristus</h3>
+    <hr>
+    <!-- Embeded map 
+     <iframe src="https://www.google.com/maps/d/embed?mid=1bTDkwVh2jAzao1wn9MsPic9ksgjsrocJ&ehbc=2E312F"
+        width="640" height="480"></iframe>
+</div> -->
+<hr>
+
 {% endblock content %}
+
