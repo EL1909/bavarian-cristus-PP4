@@ -5,35 +5,22 @@
 {% for imagepost in imagepost_list %} 
 <div class="col-12">
     <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-        <div class="col-6">
+        <div class="col-6 p-4">
             <img src="{{ imagepost.image.url }}" width="100%" alt="{{ imagepost.title }}">
         </div>
-        <div class="col-6 p-4">
+        <div class="col">
             <div class="row">
-                  <div class="col-6">
-                    <strong class="d-inline-block mb-2">Posted By: {{ imagepost.user }}</strong>
-                    <div class="row">
-                        <div class="col">
-                          <p>test for likes</p>  
-                        </div>
-                        <div class="col">
-                          {% with comments.count as total_comments %}
-                          <strong class="text-secondary"><i class="far fa-comments"></i>
-                          <!-- Our total_comments variable goes before the closing strong tag -->
-                          {{ total_comments }}
-                          </strong>
-                          {% endwith %}
-                        </div>
-                    </div>
-                  </div>
-                  <div class="col d-inline">
-                    <h3 class="mb-0"><a class="navbar-brand" href="{% url 'post_detail' imagepost.slug %}">{{ imagepost.title }}</a></h3>
-                    <p class="text-muted">{{ imagepost.created_on }}</p>
-                  </div>
-            </div>      
-        </div>
+                <div class="col p-4 d-inline">
+                    <p>Posted by: <h5>{{ imagepost.user }}</h5></p> 
+                </div>
+                <div class="col  p-4 text-end">
+                  <h2 class="p-4"><a href="{% url 'post_detail' imagepost.slug %}">{{ imagepost.title }}</a></h2>
+                </div>
+            </div>
+        </div>      
     </div>
 </div>
+
 {% endfor %}
 
 <!--

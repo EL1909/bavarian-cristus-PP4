@@ -97,6 +97,8 @@ i solve it by typing 1, then true
 
 16.03.23    - IM having a bug related to the secons screenshot, apparently im not refering to any image post in my views... apparently im trying to post the coment without specifiying the user_id of the commenter... i did dolve it by modifiyng my comment-post view and adding arguments for user and image_post instead post.......
 
+22.03.23    - I need to make the images on landing page to be responsvie as i want; and add comments and location to "postcards" image that im building on my landing
+
 
 -0-
 
