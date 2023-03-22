@@ -43,7 +43,7 @@ class PostDetail(DetailView):
         liked = False
         if post.likes.filter(id=self.request.user.id).exists():
             liked = True
-    
+
         comment_form = CommentForm(data=request.POST)
 
         if comment_form.is_valid():
@@ -81,4 +81,3 @@ class PostLike(View):
             post.likes.add(request.user)
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
-
