@@ -1,6 +1,8 @@
 from django.shortcuts import render, get_object_or_404, reverse
-from django.views.generic import View, DetailView, ListView
+from django.views.generic import View, DetailView, ListView, CreateView
 from django.http import HttpResponseRedirect
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.urls import reverse_lazy
 from .models import ImagePost
 from .forms import CommentForm
 
@@ -81,3 +83,22 @@ class PostLike(View):
             post.likes.add(request.user)
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+
+
+class UserProfile(LoginRequiredMixin, View):
+    def get(self, request):
+        user = request.user
+        image_posts = ImagePost.objects.filter(user=user)
+        context = {'user': user, 'image_posts': image_posts}
+        return render(request, "profile.html", context)
+
+
+class ImagePostCreate(LoginRequiredMixin, CreateView):
+    model = ImagePost
+    fields = ['title','slug', 'author', 'image', 'location', 'latitude', 'longitude', 'content', 'excerpt']
+    template_name = 'create.html'
+    success_url = reverse_lazy('create')
+    
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)

@@ -17,7 +17,6 @@ class ImagePost(models.Model):
     longitude = models.DecimalField(max_digits=9, decimal_places=6)
     created_on = models.DateTimeField(auto_now_add=True)
     content = models.TextField()
-    featured_image = CloudinaryField('image', default='placeholder')
     excerpt = models.TextField()
     status = models.IntegerField(choices=STATUS, default=0)
     likes = models.ManyToManyField(User, related_name='image_likes', blank=True)
@@ -38,7 +37,7 @@ class Comment(models.Model):
     image_post = models.ForeignKey(ImagePost, on_delete=models.CASCADE, related_name='comments')
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='comments_made')
     name = models.CharField(max_length=80)
-    email = models.EmailField(default=True)
+    email = models.EmailField()
     created_on = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
 

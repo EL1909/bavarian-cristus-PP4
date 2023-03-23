@@ -10,6 +10,7 @@
 <div class="container">
     <!-- Post title goes in these h2 tags -->
     <h2><a href="#">{{ post.title }}</a></h2>
+    <h2><a href="{% url 'profile' %}">{{ user.username }}</a></h2>
     <p class="card-text">{{ post.excerpt }}</p> 
     <div class="row">
         <div class="col card mb-4  mt-3 left  top">
