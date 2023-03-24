@@ -11,9 +11,12 @@
     <!-- Post title goes in these h2 tags -->
     <h2><a href="#">{{ post.title }}</a></h2>
     <h2><a href="{% url 'profile' %}">{{ user.username }}</a></h2>
-    <p class="card-text">{{ post.excerpt }}</p> 
+    {% if user == post.user %}
+    <button><a class="btn btn-secondary" href="#">Edit</a></button>
+    {% endif %}
+    <p class="card-text">{{ post.content }}</p> 
     <div class="row">
-        <div class="col card mb-4  mt-3 left  top">
+        <div class="col card mb-4  mt-3 left top">
             <div class="card-body">
                 <!-- The post content goes inside the card-text. -->
                 <!-- Use the | safe filter inside the template tags -->

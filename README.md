@@ -100,6 +100,37 @@ i solve it by typing 1, then true
 22.03.23    - I need to make the images on landing page to be responsvie as i want; and add comments and location to "postcards" image that im building on my landing
 
 
+
+## Classes
+
+## ERD
+
+I will be using three diferent database models for this project: User, ImagePost and Comments,
+
+The User class is the default User class from Django.
+
+The ImagePost class is the key custom class in this project as the main function of the site is for users to share their own taken images.
+
+I found is necessary to have two foreign keys in the Comment model to establish a relationship between the Comment model, the ImagePost model, and the User model.
+
+The image_post foreign key in the Comment model is used to associate each comment with a specific image post. This creates a one-to-many relationship between the ImagePost model and the Comment model, as each ImagePost can have multiple Comment instances associated with it.
+
+The user foreign key in the Comment model is used to track the user who made the comment. This creates a one-to-many relationship between the User model and the Comment model, as each User can have multiple Comment instances associated with it.
+
+<img src="media/readme/EDR-Bavarian-Cristus.png">
+
+
+
+
+
+VIEWS
+
+<img src="https://share.balsamiq.com/c/6c3j4m96B8F4TvZWwM9xtp.png">
+
+
+
+
+
 -0-
 
 Bavarian Cristus is a website created by Luciano Fernandez for the purpouse of allowing all people interested in Jesus Christ, that also enjoy to take and share photos, and happen to be residents or visiting Bavaria, to share their pictures and thoughts about images shared by others.

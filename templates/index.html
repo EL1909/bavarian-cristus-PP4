@@ -5,16 +5,16 @@
 {% for imagepost in imagepost_list %} 
 <div class="col-12">
     <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-        <div class="col-6 p-4">
+        <div class="col-md-6 p-4">
             <img src="{{ imagepost.image.url }}" width="100%" alt="{{ imagepost.title }}">
         </div>
-        <div class="col">
+        <div class="col-md-6">
             <div class="row">
                 <div class="col p-4 d-inline">
                     <p>Posted by: <h5>{{ imagepost.user }}</h5></p> 
                 </div>
-                <div class="col  p-4 text-end">
-                  <h2 class="p-4"><a href="{% url 'post_detail' imagepost.slug %}">{{ imagepost.title }}</a></h2>
+                <div class="col p-4 d-inline text-end">
+                  <h3><a href="{% url 'post_detail' imagepost.slug %}">{{ imagepost.title }}</a></h3>
                 </div>
             </div>
         </div>      

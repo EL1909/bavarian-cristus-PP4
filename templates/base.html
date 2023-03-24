@@ -28,7 +28,10 @@
           </li>
             {% if user.is_authenticated %}
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'account_logout' %}"><i class="fa-solid fa-user-check"></i> {{ user.username }} <i class="fa-solid fa-right-from-bracket"></i></a>
+              <a class="nav-link" href="{% url 'profile' %}"><i class="fa-solid fa-user-check"></i> {{ user.username }} </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'account_logout' %}"><i class="fa-solid fa-right-from-bracket"></i></a>
             </li>
             {% else %}
             <li class="nav-item">
