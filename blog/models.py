@@ -16,7 +16,7 @@ class ImagePost(models.Model):
     latitude = models.DecimalField(max_digits=9, decimal_places=6)
     longitude = models.DecimalField(max_digits=9, decimal_places=6)
     created_on = models.DateTimeField(auto_now_add=True)
-    content = models.TextField()
+    text = models.TextField()
     excerpt = models.TextField()
     status = models.IntegerField(choices=STATUS, default=0)
     likes = models.ManyToManyField(User, related_name='image_likes', blank=True)

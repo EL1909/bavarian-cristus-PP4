@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-       
+<!-- PostCard -->
 {% for imagepost in imagepost_list %} 
 <div class="col-12">
     <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
@@ -20,15 +20,8 @@
         </div>      
     </div>
 </div>
-
 {% endfor %}
-
-<!--
-<div class="mb-1 text-muted">{{ imagepost.created_on }}</div>
-    <p class="card-text mb-auto">{{ imagepost.excerpt }}</p>
-    <a href="#" class="stretched-link">Continue reading</a>
-</div>
--->
+<!-- Comment Section -->
 <div>
     <h5>Comments:</h5>
   <!-- We want a for loop inside the empty control tags to iterate through each comment in comments -->
@@ -48,5 +41,12 @@
               <!-- Our for loop ends here -->
     {% endfor %}
 </div>
+
+<!--   MAP
+<div class="mb-1 text-muted">{{ imagepost.created_on }}</div>
+    <p class="card-text mb-auto">{{ imagepost.excerpt }}</p>
+    <a href="#" class="stretched-link">Continue reading</a>
+</div>
+-->
 
 {% endblock %}

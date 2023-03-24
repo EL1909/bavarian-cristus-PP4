@@ -99,7 +99,9 @@ i solve it by typing 1, then true
 
 22.03.23    - I need to make the images on landing page to be responsvie as i want; and add comments and location to "postcards" image that im building on my landing
 
+24.03.23    - Im having a bug, when im calling the text from the imagePost to be displayed it shows with HTML sintax; however whn i call excerpt shows correctly.
 
+<img src="media/readme/Text Error.jpg">
 
 ## Classes
 
