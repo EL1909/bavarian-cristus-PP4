@@ -1,5 +1,10 @@
-from .models import Comment
+from .models import ImagePost, Comment
 from django import forms
+
+
+class ImagePostForm(forms.ModelForm):
+    class meta:
+        model = ImagePost
 
 
 class CommentForm(forms.ModelForm):

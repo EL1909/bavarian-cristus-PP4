@@ -1,11 +1,12 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, redirect #get_object_or_404, reverse,
 from django.views.generic import View, DetailView, ListView, CreateView
-from django.http import HttpResponseRedirect
+from django.http import HttpResponse #HttpResponseRedirect
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
+from cloudinary.forms import cl_init_js_callbacks
 from .models import ImagePost
-from .forms import CommentForm
+from .forms import CommentForm, ImagePostForm
 
 
 class PostList(ListView):
@@ -34,7 +35,6 @@ class PostDetail(DetailView):
             }
 
         return render(request, "post_detail.html", context,)
-
 
     def post(self, request, slug, *args, **kwargs):
         queryset = ImagePost.objects.filter(status=1)
@@ -86,26 +86,24 @@ class UserProfile(LoginRequiredMixin, View):
 
     def get(self, request):
         user = request.user
-        queryset = ImagePost.objects.filter(status=1)
+        # queryset = ImagePost.objects.filter(status=1)
         image_posts = ImagePost.objects.filter(user=user)
-        context = {'user': user, 'image_posts': image_posts,}
+        context = {'user': user, 'image_posts': image_posts, }
         return render(request, "profile.html", context)
 
 
-class ImagePostCreate(LoginRequiredMixin, CreateView):
-    model = ImagePost
-    fields = ['title','slug', 'author', 'image', 'location', 'latitude', 'longitude', 'text']
-    template_name = 'create.html'
-    success_url = reverse_lazy('create')
+@login_required
+def ImagePostCreate(request):
+    context = dict( backend_form=ImagePostForm())
 
-    def form_valid(self, form):
-        form.instance.user = self.request.user
-        return super().form_valid(form)
+    if request.method == 'POST':
+        form = ImagePostForm(request.POST, request.FILES)
+        context['posted'] = form.instance
+        if form.is_valid():
+            form.save()    
+        return render(request, 'profile.html', context)
+    return render(request, 'create.html')
 
 
 def about(request):
     return render(request, 'about.html')
-
-
-
-
