@@ -1,10 +1,12 @@
-from django.shortcuts import render, redirect #get_object_or_404, reverse,
+from django.shortcuts import render, redirect, get_object_or_404, reverse
 from django.views.generic import View, DetailView, ListView, CreateView
-from django.http import HttpResponse #HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
 from cloudinary.forms import cl_init_js_callbacks
+from django.utils.text import slugify
+from django import forms
 from .models import ImagePost
 from .forms import CommentForm, ImagePostForm
 
@@ -93,16 +95,22 @@ class UserProfile(LoginRequiredMixin, View):
 
 
 @login_required
-def ImagePostCreate(request):
-    context = dict( backend_form=ImagePostForm())
+def upload(request):
+    if request.method == "POST":
+        title = request.POST.get('title')
+        slug = slugify('title')
+        user = request.user
+        author = request.POST.get('user')
+        image = request.POST.get('image')
+        location = request.POST.get('location')
+        text = request.POST.get('text')
+        status = 1
+        ImagePost.objects.create(title=title, slug=slug, user=user, author=user, image=image, location=location, text=text, status=1 )
+        return redirect('profile')
+    return render(request, 'upload.html')
 
-    if request.method == 'POST':
-        form = ImagePostForm(request.POST, request.FILES)
-        context['posted'] = form.instance
-        if form.is_valid():
-            form.save()    
-        return render(request, 'profile.html', context)
-    return render(request, 'create.html')
+
+
 
 
 def about(request):

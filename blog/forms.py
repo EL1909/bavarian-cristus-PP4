@@ -1,13 +1,14 @@
 from .models import ImagePost, Comment
-from django import forms
+from django.forms import ModelForm
 
 
-class ImagePostForm(forms.ModelForm):
-    class meta:
+class ImagePostForm(ModelForm):
+    class Meta:
         model = ImagePost
+        fields = ('image',)
 
 
-class CommentForm(forms.ModelForm):
+class CommentForm(ModelForm):
     class Meta:
         model = Comment
         fields = ('text',)

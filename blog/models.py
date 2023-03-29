@@ -7,7 +7,7 @@ STATUS = ((0, "Draft"), (1, "Published"))
 
 class ImagePost(models.Model):
 
-    title = models.CharField(max_length=200, unique=True)
+    title = models.CharField(max_length=200, unique=False)
     slug = models.SlugField(max_length=200, unique=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='uploaded_images')
     author = models.CharField(max_length=255)
