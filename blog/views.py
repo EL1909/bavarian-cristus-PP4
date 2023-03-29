@@ -9,6 +9,7 @@ from django.utils.text import slugify
 from django import forms
 from .models import ImagePost
 from .forms import CommentForm, ImagePostForm
+import cloudinary
 
 
 class PostList(ListView):
@@ -101,16 +102,20 @@ def upload(request):
         slug = slugify('title')
         user = request.user
         author = request.POST.get('user')
-        image = request.POST.get('image')
+        image = request.FILES.get('image') # Use request.FILES to get the uploaded image
         location = request.POST.get('location')
         text = request.POST.get('text')
         status = 1
-        ImagePost.objects.create(title=title, slug=slug, user=user, author=user, image=image, location=location, text=text, status=1 )
+        
+        # Save the image to Cloudinary
+        response = cloudinary.uploader.upload(image)
+        image_url = response['secure_url']
+        
+        # Create a new ImagePost object with the image URL
+        ImagePost.objects.create(title=title, slug=slug, user=user, author=user, image=image_url, location=location, text=text, status=1 )
+        
         return redirect('profile')
     return render(request, 'upload.html')
-
-
-
 
 
 def about(request):
