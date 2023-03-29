@@ -9,6 +9,7 @@ from django.utils.text import slugify
 from django import forms
 from .models import ImagePost
 from .forms import CommentForm, ImagePostForm
+import random, string
 import cloudinary
 
 
@@ -97,14 +98,36 @@ class UserProfile(LoginRequiredMixin, View):
 
 @login_required
 def upload(request):
-    return render(request, 'upload',)
+    if request.method == "POST":
+        title = request.POST.get('title')
+        slug = slugify(title)
+        user = request.user
+        author = request.POST.get('user')
+        image = request.FILES.get('image') # Use request.FILES to get the uploaded image
+        location = request.POST.get('location')
+        text = request.POST.get('text')
+        status = 1
 
+        # Save the image to Cloudinary
+        response = cloudinary.uploader.upload(image)
+        image_url = response['secure_url']
+
+        # Check if a post with the same slug already exists
+        while ImagePost.objects.filter(slug=slug).exists():
+            # If it does, add a random string to the end of the slug
+            random_string = ''.join(random.choices(string.ascii_lowercase + string.digits, k=6))
+            slug = f"{slug}-{random_string}"
+
+        # Create a new ImagePost object with the image URL
+        ImagePost.objects.create(title=title, slug=slug, user=user, author=user, image=image_url, location=location, text=text, status=1)
+
+        return redirect('profile')
+    return render(request, 'upload.html',)
 
 
 @login_required
 def Post_edit(request, item_slug):
-    return render(request, 'post_edit.html')
-
+    return render(request, 'post_edit.html',)
 
 
 def about(request):

@@ -11,10 +11,10 @@
 </div>
 
 <div class="row p-4">
-    <div class="col-6" id='backend_upload'>
+    <div class="col-6 p-4" id='backend_upload'>
         <h2>Upload Here <i class="fa-sharp fa-solid fa-camera-retro"></i></h2>
-        <form method="POST" action="upload">
-          {% csrf_token %}
+        <form method="POST" enctype="multipart/form-data">
+          {% csrf_token %} 
         <label for="title">Title: </label>
             <input type="text" id="title" name="title">
             <br>
@@ -30,7 +30,7 @@
             <input type="file" id="upload" name="image" value="upload">
             <label for="upload"></label>
             <br>
-            <input type="submit" value="Upload">
+            <input type="submit" value="upload">
         </form>
     </div>
   <div class="col-6">
