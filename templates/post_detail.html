@@ -12,7 +12,7 @@
     <h2><a href="#">{{ post.title }}</a></h2>
     <h2><a href="#">{{ post.user }}</a></h2>
     {% if user == post.user %}
-    <button><a class="btn btn-secondary" href="#">Edit</a></button>
+    <a class="btn btn-secondary" href="{% url 'post_edit' post.slug %}"><button>Edit</button></a>
     {% endif %}
     <p class="card-text">{{ post.content }}</p> 
     <div class="row">

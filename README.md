@@ -103,6 +103,12 @@ i solve it by typing 1, then true
 
 <img src="media/readme/Text Error.jpg">
 
+
+
+29.03.23    - Im having problems with loading the update.html template; when i click the button to upload a new post it doesn't load, shows 404 error; however if i add a / in the url file path, it does load the template, but does not add the new post.
+
+
+
 ## Classes
 
 ## ERD

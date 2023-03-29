@@ -13,8 +13,8 @@
 <div class="row p-4">
     <div class="col-6" id='backend_upload'>
         <h2>Upload Here <i class="fa-sharp fa-solid fa-camera-retro"></i></h2>
-          <form action="{% url 'upload' %}" method="post" enctype="multipart/form-data">
-        {% csrf_token %}
+        <form method="POST" action="upload">
+          {% csrf_token %}
         <label for="title">Title: </label>
             <input type="text" id="title" name="title">
             <br>
