@@ -127,7 +127,17 @@ def upload(request):
 
 @login_required
 def Post_edit(request, item_slug):
-    return render(request, 'post_edit.html',)
+    item = get_object_or_404(ImagePost, slug=item_slug)
+    if request.method == 'POST':
+        form = ImagePostForm(request.POST, instance=item)
+        if form.is_valid():
+            form.save()
+            return redirect('post_detail')
+    form = ImagePostForm(instance=item)
+    context = {
+        "form" : form
+    }
+    return render(request, 'post_edit.html', context)
 
 
 def about(request):
