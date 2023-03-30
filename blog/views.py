@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404, reverse
-from django.views.generic import View, DetailView, ListView, CreateView
+from django.views.generic import View, DetailView, ListView
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
@@ -9,7 +9,8 @@ from django.utils.text import slugify
 from django import forms
 from .models import ImagePost
 from .forms import CommentForm, ImagePostForm
-import random, string
+import random
+import string
 import cloudinary
 
 
@@ -132,13 +133,18 @@ def Post_edit(request, item_slug):
         form = ImagePostForm(request.POST, instance=item)
         if form.is_valid():
             form.save()
-            return redirect('post_detail')
+            return redirect('profile')
     form = ImagePostForm(instance=item)
     context = {
-        "form" : form
+        "form": form
     }
     return render(request, 'post_edit.html', context)
 
+
+def Delete(request, item_slug):
+    item = get_object_or_404(ImagePost, slug=item_slug)
+    item.delete()
+    return redirect('profile')
 
 def about(request):
     return render(request, 'about.html')
