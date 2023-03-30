@@ -3,5 +3,9 @@
 
 
 body {
-    background-color: red;
+    background-color: green;
+}
+
+.logo {
+    height: 100px;
 }
