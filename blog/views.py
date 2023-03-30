@@ -131,6 +131,10 @@ def Post_edit(request, item_slug):
     item = get_object_or_404(ImagePost, slug=item_slug)
     if request.method == 'POST':
         form = ImagePostForm(request.POST, instance=item)
+        image = request.FILES.get('image') # Use request.FILES to get the uploaded image
+        # Save the image to Cloudinary
+        response = cloudinary.uploader.upload(image)
+        image_url = response['secure_url']
         if form.is_valid():
             form.save()
             return redirect('profile')
@@ -145,6 +149,7 @@ def Delete(request, item_slug):
     item = get_object_or_404(ImagePost, slug=item_slug)
     item.delete()
     return redirect('profile')
+
 
 def about(request):
     return render(request, 'about.html')
