@@ -14,7 +14,7 @@
 </head>
 <body>
   <!-- Header-->
-  <header class="container logo navbar navbar-expand-md navbar-light bg-light">
+  <header class="container-fluid logo navbar navbar-expand-md">
     <div class="container">
       <a class="navbar-brand" href="{% url 'home' %}">Bavarian Cristus</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -61,31 +61,32 @@
     </div>
   </div>
   <!-- Main Text -->
-  <div class="container">
+  <div class="container-fluid">
     <div class= "row">
-      <div class="col-12 p-4 text-end">
+      <div class="col-12 p-4 text-end maintext">
         <h1>Jesus is Everywhere,</h1>
         <h3>specially in Bavaria.</h3>
       </div>
     </div>
   </div>
+  <br>
   <!-- Main content template -->
-  <div class="container ">
+  <div class="container">
     {% block content %}
     {% endblock %}
   </div>
   <!-- Footer-->
-  <footer class="container">
-    <div class="row">
-      <div class="col-12 col-md-6">
+  <footer class="container-fluid footer navbar navbar-expand-md ">
+    <div class="container">
+      <div class="col-6 col-md-6">
         <p>&copy; 2023 Bavarian Cristus. All Rights Reserved.</p>
       </div>
-      <div class="col-12 col-md-6 text-end">
+      <div class="col-6 col-md-6 text-end">
         <ul>
-          <li class="list-inline-item"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-          <li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
-          <li class="list-inline-item"><a href="#"><i class="fab fa-instagram"></i></a></li>
-          <li class="list-inline-item"><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
+          <li class="list-inline-item social-links"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+          <li class="list-inline-item social-links"><a href="#"><i class="fab fa-twitter"></i></a></li>
+          <li class="list-inline-item social-links"><a href="#"><i class="fab fa-instagram"></i></a></li>
+          <li class="list-inline-item social-links"><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
         </ul>
       </div>
     </div>

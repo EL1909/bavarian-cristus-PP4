@@ -135,6 +135,7 @@ def Post_edit(request, item_slug):
         # Save the image to Cloudinary
         response = cloudinary.uploader.upload(image)
         image_url = response['secure_url']
+        item.image = image_url
         if form.is_valid():
             form.save()
             return redirect('profile')

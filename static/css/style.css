@@ -1,11 +1,51 @@
-/* Imported fonts from google Noto and Dosis*/
-@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200&family=Noto+Sans+KR&display=swap');
-
-
 body {
-    background-color: green;
+    background-color: #c39b72b7;
 }
-
+/*--------------------------------------------Header*/
 .logo {
+    background-color: rgba(86, 7, 12, 0.8);
+    color: #fafafa;
     height: 100px;
 }
+
+.navbar-brand {
+    font-size: 2rem;
+}
+
+.logo a {
+    color: #fafafa;
+}
+
+.navbar {
+    color: #fafafa;
+}
+/*--------------------------------------------MainText*/
+.maintext {
+    background-color: #ad8762;
+    color: #fafafa;
+    width: 100%;
+    height: auto;
+    font-size: 2rem;
+}
+
+/*--------------------------------------------Footer*/
+
+footer {
+    background-color: rgba(86, 7, 12, 0.8);
+    min-height: 100px;
+}
+
+footer li a {
+    color: #fafafa;
+    text-align: center;
+    font-size: 1.4rem;
+    padding: 5px;
+}
+
+footer i:hover {
+    color: rgba(245, 221, 7, 0.86);
+    transition: all 0.15s ease-in-out;
+    -moz-transition: all 0.15s ease-in-out;
+    -webkit-transition: all 0.15s ease-in-out;
+    -o-transition: all 0.15s ease-in-out;
+}   
