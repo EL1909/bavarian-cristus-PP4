@@ -22,26 +22,25 @@
                     </div>    
                 </div>
                 <div class="row">
-                    <div class="col-6">
-                        {% if user.is_authenticated %}    
-                        <p> 
-                            <form action="{% url 'post_like' post.slug %}" method="POST">
+                    <div class="col-6 d-inline p-4">
+                        {% if user.is_authenticated %}
+                            <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
                             {% csrf_token %}
                             {% if liked %}
-                            <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i class="fas fa-heart"></i></button>
+                            <button type="submit" name="blogpost_id" value="{{post.slug}}"><i class="fas fa-heart"></i></button>
                             {% else %}
-                            <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i class="far fa-heart"></i></button>
+                            <button type="submit" name="blogpost_id" value="{{post.slug}}"><i class="far fa-heart"></i></button>
                             {% endif %}
                             </form>
-                        </p>
                         {% else %}
-                        <p><i class="far fa-heart"></i></p>
+                        <span class="text-secondary"><i class="far fa-heart"></i></span>
                         {% endif %}
-                        <p>{{ post.number_of_likes }}</p>
+                        <span class="text-secondary">{{ post.number_of_likes }}</span>
                         {% with comments.count as total_comments %}
-                        <p><i class="far fa-comments"></i>{{ total_comments }}</p>
+                        <span class="text-secondary p-4"><i class="far fa-comments"></i> {{ total_comments }}</span>
                         {% endwith %}
                     </div>
+                    <!-- Edit and create post box-->
                     {% if user == post.user %}
                     <div class="col-6 text-end">
                         <a href="{% url 'post_edit' post.slug %}"><button class="btn btn-secondary">Edit</button></a>
