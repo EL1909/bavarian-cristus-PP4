@@ -1,7 +1,7 @@
 body {
     background-color: #c39b72b7;
 }
-/*--------------------------------------------Header*/
+/*------------------------------------------- Header*/
 .logo {
     background-color: rgba(86, 7, 12, 0.8);
     color: #fafafa;
@@ -19,7 +19,7 @@ body {
 .navbar {
     color: #fafafa;
 }
-/*--------------------------------------------MainText*/
+/*------------------------------------------- MainText*/
 .maintext {
     background-color: #ad8762;
     color: #fafafa;
@@ -28,11 +28,11 @@ body {
     font-size: 2rem;
 }
 
-/*--------------------------------------------Footer*/
+/*------------------------------------------- Footer*/
 
 footer {
     background-color: rgba(86, 7, 12, 0.8);
-    min-height: 100px;
+    height: 100px;
 }
 
 footer li a {
@@ -49,3 +49,22 @@ footer i:hover {
     -webkit-transition: all 0.15s ease-in-out;
     -o-transition: all 0.15s ease-in-out;
 }   
+
+/*---------------------------------- Image container*/
+.frame {
+    border: 5px solid #ad8762;
+    background:rgba(86, 7, 12, 0.8);
+    margin: 2px;
+    padding: 3px; 
+  }
+  
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+
+
+.comments   {
+    max-height: 300px;
+}

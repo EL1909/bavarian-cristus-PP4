@@ -4,61 +4,62 @@
 
 {% load crispy_forms_tags %}
 <!-- Main image post -->
-<div class="container col-12 p-4"> 
+<div class="container col-12 frame"> 
   <img src="{{ post.image.url }}" width="100%" alt="{{ imagepost.title }}">
 </div>
+<hr>
+<!-- Post Information Box -->
 <div class="container">
-    <!-- Post title goes in these h2 tags -->
-    <h2><a href="#">{{ post.title }}</a></h2>
-    <h2><a href="#">{{ post.user }}</a></h2>
-    {% if user == post.user %}
-    <a href="{% url 'post_edit' post.slug %}"><button class="btn btn-secondary">Edit</button></a>
-    <a href="{% url 'delete' post.slug %}"><button class="btn btn-secondary">Delete</button></a>
-    {% endif %}
-    <p class="card-text">{{ post.content }}</p> 
     <div class="row">
-        <div class="col card mb-4  mt-3 left top">
-            <div class="card-body">
-                <!-- The post content goes inside the card-text. -->
-                <!-- Use the | safe filter inside the template tags -->
-                <p class="card-text ">
-                    {{ imagepost.text }}
-                </p>
+            <div class="col-6 p-4 card" >
+                <h2>{{ post.title }}</h2>
+                <p class="text-muted h6">{{ post.created_on }}</p> 
+            </div>
+            <div class="col-6 p-4 card">
                 <div class="row">
-                    <div class="col-1">
-                        <strong>
-                            {% if user.is_authenticated %}
-                            <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
-                                {% csrf_token %}
-                                {% if liked %}
-                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i class="fas fa-heart"></i></button>
-                                {% else %}
-                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i class="far fa-heart"></i></button>
-                                {% endif %}
-                            </form>
+                    <div class="col-12 text-end">
+                        <h2><a href="{% url 'profile' %}">{{ post.user }}</a></h2>
+                    </div>    
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        {% if user.is_authenticated %}    
+                        <p> 
+                            <form action="{% url 'post_like' post.slug %}" method="POST">
+                            {% csrf_token %}
+                            {% if liked %}
+                            <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i class="fas fa-heart"></i></button>
                             {% else %}
-                            <span class="text-secondary"><i class="far fa-heart"></i></span>
+                            <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i class="far fa-heart"></i></button>
                             {% endif %}
-                        <!-- The number of likes goes before the closing strong tag -->
-                        <span class="text-secondary">{{ post.number_of_likes }} </span>
-                        </strong>
-                    </div>
-                    <div class="col-1">
+                            </form>
+                        </p>
+                        {% else %}
+                        <p><i class="far fa-heart"></i></p>
+                        {% endif %}
+                        <p>{{ post.number_of_likes }}</p>
                         {% with comments.count as total_comments %}
-                        <strong class="text-secondary"><i class="far fa-comments"></i>
-                        <!-- Our total_comments variable goes before the closing strong tag -->
-                        {{ total_comments }}</strong>
+                        <p><i class="far fa-comments"></i>{{ total_comments }}</p>
                         {% endwith %}
                     </div>
-                    <p class="card-text text-muted h6">{{ post.created_on }}</p>
+                    {% if user == post.user %}
+                    <div class="col-6 text-end">
+                        <a href="{% url 'post_edit' post.slug %}"><button class="btn btn-secondary">Edit</button></a>
+                        <a href="{% url 'delete' post.slug %}"><button class="btn btn-secondary">Delete</button></a>
+                    </div>
+                    {% endif %}
                 </div>
             </div>
-        </div>
     </div>
-    <div class="row">
-        <div class="col-md-8 card mb-4 p-4 mt-3">
-            <h3>Comments:</h3>
-            <div class="card-body">
+</div>
+<!-- Comments Box -->
+<div class="row">
+    <div class="col-md-8 card mb-4 p-4 mt-3">
+        <h3>Comments:</h3>
+        <div class="col-8 card-body">
+            <p>{{ post.text }}</p>
+        </div>
+        <div class="card-body">
                 <!-- We want a for loop inside the empty control tags to iterate through each comment in comments -->
                 {% for comment in comments %}
                 <div class="comments" style="padding: 10px;">
@@ -75,9 +76,9 @@
                 </div>
                 <!-- Our for loop ends here -->
                 {% endfor %}
-            </div>
         </div>
-        <div class="col-md-4 card mb-4  mt-3 ">
+    </div>
+    <div class="col-md-4 card mb-4  mt-3 ">
             <div class="card-body">
                 {% if commented %}
                     <div class="alert alert-success" role="alert">
@@ -95,9 +96,9 @@
                     {% endif %}
                 {% endif %}
             </div>
-        </div>
     </div>
 </div>
+
 
   <!-- Bottom post-->
 <div class="col d-none d-lg-block">
