@@ -63,8 +63,13 @@ footer i:hover {
     height: 100%;
   }
 
-
+/*------------------------------ Post Information Box*/
 
 .comments   {
     max-height: 300px;
+}
+
+
+.post-title {
+
 }
