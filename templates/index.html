@@ -3,16 +3,16 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-  <!-- Main Text -->
-  <div class= "container-fluid">
+<!-- Main Text -->
+<div class= "container-fluid">
     <div class= "row">
       <div class="col-12 p-4 text-end maintext">
         <h1>Jesus is Everywhere,</h1>
         <h3>specially in Bavaria.</h3>
       </div>
     </div>
-  </div>
-  <br>
+</div>
+<br>
 <!-- PostCard -->
 <div class="container">
     {% for imagepost in imagepost_list %} 
@@ -22,14 +22,17 @@
         </div>
         <div class="col-md-6 p-4">
             <div class="row">
-                <div class="col d-inline">
-                    <p>Posted by: <h2>{{ imagepost.user }}</h2></p> 
+                <div class="col">
+                    <p>Posted by:</p> 
+                    <a href="{% url 'profile' %}"><h2>{{ imagepost.user }}</h2></a>
                 </div>
                 <div class="col d-inline text-end">
-                  <h2><a href="{% url 'post_detail' imagepost.slug %}">{{ imagepost.title }}</a></h2>
+                    <p>Title:</p>
+                    <a href="{% url 'post_detail' imagepost.slug %}"><h2>{{ imagepost.title }}</h2></a>
                 </div>
             </div>
-            <div class="row text-end">
+            <!-- Accordeon -->
+            <div class="row align-items-center text-end">
               <div class="accordion" id="accordionExample">
                 <div class="accordion-item">
                   <h3 class="accordion-header" id="headingOne">
