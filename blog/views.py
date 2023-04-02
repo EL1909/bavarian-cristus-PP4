@@ -38,9 +38,9 @@ class PostDetail(DetailView):
                 "liked": liked,
                 "comment_form": CommentForm()
             }
-
         return render(request, "post_detail.html", context,)
 
+    @login_required
     def post(self, request, slug, *args, **kwargs):
         queryset = ImagePost.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
@@ -130,16 +130,23 @@ def upload(request):
 def Post_edit(request, item_slug):
     item = get_object_or_404(ImagePost, slug=item_slug)
     if request.method == 'POST':
-        form = ImagePostForm(request.POST, instance=item)
-        image = request.FILES.get('image') # Use request.FILES to get the uploaded image
-        # Save the image to Cloudinary
-        response = cloudinary.uploader.upload(image)
-        image_url = response['secure_url']
-        item.image = image_url
+        form = ImagePostForm(request.POST, request.FILES, instance=item) # include request.FILES in the form
         if form.is_valid():
-            form.save()
+            # Save the form data without committing to the database yet
+            post = form.save(commit=False)
+            # Check if a new image was uploaded
+            if 'image' in request.FILES:
+                # Save the image to Cloudinary
+                image = request.FILES['image']
+                response = cloudinary.uploader.upload(image)
+                image_url = response['secure_url']
+                # Update the image URL in the database
+                post.image = image_url
+            # Save the post to the database
+            post.save()
             return redirect('profile')
-    form = ImagePostForm(instance=item)
+    else:
+        form = ImagePostForm(instance=item)
     context = {
         "form": form
     }
