@@ -1,7 +1,14 @@
 body {
     background-color: #c39b72b7;
 }
+
+h2  {
+    font-size: 1.5rem;
+    color:rgba(0, 0, 0, 0.8)
+    text-decoration: none;
+}
 /*------------------------------------------- Header*/
+
 .logo {
     background-color: rgba(86, 7, 12, 0.8);
     color: #fafafa;
@@ -19,6 +26,7 @@ body {
 .navbar {
     color: #fafafa;
 }
+
 /*------------------------------------------- MainText*/
 .maintext {
     background-color: #ad8762;
@@ -65,11 +73,11 @@ footer i:hover {
 
 /*------------------------------ Post Information Box*/
 
+
+
+
+/*------------------------------------- Comments Box*/
+
 .comments   {
     max-height: 300px;
-}
-
-
-.post-title {
-
 }
