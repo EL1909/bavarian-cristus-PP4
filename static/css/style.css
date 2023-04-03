@@ -137,9 +137,7 @@ img {
 
     .logo li   {
         color: rgba(86, 7, 12, 0.5);
-        text-decoration: underline;
+        text-decoration: 5px underline;
         text-transform: uppercase;
-        
-        
     }
 }
