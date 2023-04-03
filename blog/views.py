@@ -15,13 +15,13 @@ import string
 import cloudinary
 
 
-class PostList(ListView):
+class postList(ListView):
     model = ImagePost
     queryset = ImagePost.objects.filter(status=1).order_by('-created_on')
     template_name = 'index.html'
 
 
-class PostDetail(DetailView):
+class postDetail(DetailView):
 
     model = ImagePost
 
@@ -73,10 +73,10 @@ class PostDetail(DetailView):
         )
 
 
-class PostLike(View):
+class postLike(View):
 
     def post(self, request, slug):
-        post = get_object_or_404(ImagePost, slug=slug)
+        post = get_object_or_404(ImagePost, slug=slug, user=request.user)
 
         if post.likes.filter(id=request.user.id).exists():
             post.likes.remove(request.user)
@@ -86,7 +86,7 @@ class PostLike(View):
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 
-class UserProfile(LoginRequiredMixin, View):
+class userProfile(LoginRequiredMixin, View):
 
     def get(self, request):
         user = request.user
@@ -131,7 +131,7 @@ def upload(request):
 
 @login_required
 def Post_edit(request, item_slug):
-    item = get_object_or_404(ImagePost, slug=item_slug)
+    item = get_object_or_404(ImagePost, slug=item_slug, user=request.user)
     if request.method == 'POST':
         # include request.FILES in the form
         form = ImagePostForm(request.POST, request.FILES, instance=item)
@@ -159,8 +159,9 @@ def Post_edit(request, item_slug):
     return render(request, 'post_edit.html', context)
 
 
-def Delete(request, item_slug):
-    item = get_object_or_404(ImagePost, slug=item_slug)
+@login_required
+def delete(request, item_slug):
+    item = get_object_or_404(ImagePost, slug=item_slug, user=request.user)
     item.delete()
     # add a success message to the messages framework
     messages.success(request, 'Post deleted')

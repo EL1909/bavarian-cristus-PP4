@@ -1,3 +1,7 @@
+/* Imported fonts from google Cinzel Decorative and Encode Sans SC*/
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Encode+Sans+SC:wght@300&display=swap');
+
 /*---------------------------------------------- Body*/
 
 body {
@@ -5,6 +9,7 @@ body {
     min-height: 100vh;
     display: flex; 
     flex-direction: column;
+    font-family: Encode Sans SC, sans-serif ;
 }
 
 h2  {
@@ -12,6 +17,7 @@ h2  {
     font-size: 120%;
     color:rgba(0, 0, 0, 0.8);
     text-decoration: none;
+    font-family: Cinzel Decorative, sans-serif;
 }
 /*-------------------------------------------- Header*/
 
@@ -19,6 +25,7 @@ h2  {
     background-color: rgba(86, 7, 12, 0.8);
     color: #fafafa;
     height: 100px;
+    font-family: Cinzel Decorative, sans-serif;
 }
 
 .navbar-brand {
