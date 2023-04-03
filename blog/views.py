@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
 from cloudinary.forms import cl_init_js_callbacks
 from django.utils.text import slugify
+from django.contrib import messages
 from django import forms
 from .models import ImagePost
 from .forms import CommentForm, ImagePostForm
@@ -121,6 +122,9 @@ def upload(request):
         # Create a new ImagePost object with the image URL
         ImagePost.objects.create(title=title, slug=slug, user=user, author=user, image=image_url, location=location, text=text, status=1)
 
+        # add a success message
+        messages.success(request, 'Post successfully uploaded!')
+
         return redirect('profile')
     return render(request, 'upload.html',)
 
@@ -143,6 +147,8 @@ def Post_edit(request, item_slug):
                 post.image = image_url
             # Save the post to the database
             post.save()
+            # add a success message to the messages framework
+            messages.success(request, 'Post successfully Edited')
             return redirect('profile')
     else:
         form = ImagePostForm(instance=item)
@@ -155,6 +161,8 @@ def Post_edit(request, item_slug):
 def Delete(request, item_slug):
     item = get_object_or_404(ImagePost, slug=item_slug)
     item.delete()
+    # add a success message to the messages framework
+    messages.success(request, 'Post deleted')
     return redirect('profile')
 
 
