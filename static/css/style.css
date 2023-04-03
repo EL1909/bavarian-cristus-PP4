@@ -40,6 +40,7 @@ h2  {
     width: 100%;
     height: auto;
     font-size: 2rem;
+    text-align: right;
 }
 
 /*-------------------------------------------- Footer*/
@@ -92,7 +93,7 @@ img {
     max-height: 300px;
 }
 
-/*=------------------------------------- Post Card */
+/*-------------------------------------- Post Card */
 
 .accordion   {
     align-content: flex-end;
@@ -111,13 +112,34 @@ img {
     border: none;
 }
 
+.navbar-toggler-icon {
+    color:#fff;
+}
+
 /*---------------------------------------- Alerts */
 
 .alert-fixed {
-    position:sticky; 
+    position:static; 
     top: 0px; 
     left: 0px; 
     width: 100%;
     z-index: 9; 
     border-radius:0px
+}
+
+/*--------------------------------- Media Queries */
+
+@media screen and (max-width: 575px)    {
+
+    .maintext   {
+        text-align: left;
+    }
+
+    .logo li   {
+        color: rgba(86, 7, 12, 0.5);
+        text-decoration: underline;
+        text-transform: uppercase;
+        
+        
+    }
 }
