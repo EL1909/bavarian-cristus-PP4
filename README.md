@@ -128,7 +128,7 @@ UPDATEUPDATEUPDATEUPDATEUPDATEUPDATE
 <img src="media/readme/EDR-Bavarian-Cristus.png">
 
 
-## Users Types.
+## Users Types
 
 There's three type of expected users.
 1. Visitors:
@@ -151,10 +151,73 @@ There's three type of expected users.
 
 ## CRUD Capabilities
 
-All members have the hability to:
+All members have the ability to:
 - Create posts, to be showed upon approval.
 - View their own posts. 
 - Update and edit their own post.
+- Delete their own post.
+
+All this abilities were tested successfully.
+
+## Features
+
+### Design and Colors
+
+- Navigation fonts tend to be sober and respectful; text style contrast with solid background colors.
+- Cinzel Decorative and Roboto, Imported from google fonts are the fonts to be used.
+- Color selection is intended to remember colors at church and in general catholic styles.
+- Colors used in this website are:
+    - RGBA(245, 221, 7, 0.86)
+    - RGBA: (173, 135, 98, 1)
+    - RGBA: (250, 235, 215, 1)
+    - RGBA(195, 155, 114, 0.71)
+
+<img src="readme/colors.png">
+
+
+### Navigation
+
+- Featured at the top of the page, the navigation shows the website's name in the left corner BAVARIAN CRISTUS, which is to be showed in every page and links to the home page.
+
+<img src="readme/navbar.png">
+
+
+The menu collapses in a sandwich icon from medium media queries, and the navigation elements get underlined when displayed.
+
+
+<img src="readme/navbarreduced.png">
+<img src="readme/navbarreduced2.png">
+
+
+The home page is designed to show each post as a Traditional Post Card; wich contains fields to show information about the post. However features for writting a message from the card and export as PDF were hidden because are not functional yet.
+
+In order to access the post, we must click either the image or the title of the post; clicking the name under "Posted By:" must take us to the profile from the member who upload the image.
+
+
+<img src="readme/PostCard.png">
+
+Once Inside the post, we will look at the image in full size, with a frame according to the website colors.
+
+Below the image, we sill see the Post title and the likes functionallity; together with the number of comments written for this post.
+
+We can see too the name of the post's author. Here the posts can be edited or deleted. 
+
+All comments that have been made for this post can be viewd here as well; if the user is authenticated will be able to post a message himself, will be only showed upon approval though. 
+
+<img src="readme/postdetail.png">
+
+At the bottom of the post page commes a map, the members will have the opportunity to tag the location where they took the photo. Is not properly connected yet.
+
+
+
+
+
+- In the top-right corner, users can find the website menu; with three links redirecting to "Home", "Gallery' and "Post" pages respectively, each one has a diferent page.
+
+
+
+
+
 
 
 
@@ -169,19 +232,6 @@ All members have the hability to:
     - Models
 - Users types
 - CRUD Capabilities
-
-
-Comment CRUD Stories
-Like Stories
-Feedback Stories
-UI Stories
-Search and Filter Stories
-
-- Agile Workflow
-Adding essential features first.
-GitHub Features
-    Issues
-    Projects
 - Features
 Admin Panel
 allauth authentication

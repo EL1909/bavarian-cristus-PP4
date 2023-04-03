@@ -107,7 +107,7 @@ def upload(request):
         image = request.FILES.get('image')
         location = request.POST.get('location')
         text = request.POST.get('text')
-        status = 1
+        status = 0
 
         # Save the image to Cloudinary
         response = cloudinary.uploader.upload(image)

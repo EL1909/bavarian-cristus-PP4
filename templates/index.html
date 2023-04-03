@@ -18,17 +18,17 @@
     {% for imagepost in imagepost_list %} 
     <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative bg-light">
         <div class="col-md-6 p-4">
-            <img src="{{ imagepost.image.url }}" width="100%" alt="{{ imagepost.title }}">
+            <a href="{% url 'post_detail' imagepost.slug %}"><img src="{{ imagepost.image.url }}" width="100%" alt="{{ imagepost.title }}"></a>
         </div>
         <div class="col-md-6 p-4">
             <div class="row">
                 <div class="col">
                     <p>Posted by:</p> 
-                    <a href="{% url 'profile' %}"><h2>{{ imagepost.user }}</h2></a>
+                    <a href="{% url 'profile' %}"><h2 class="tohover">{{ imagepost.user }}</h2></a>
                 </div>
                 <div class="col d-inline text-end">
                     <p>Title:</p>
-                    <a href="{% url 'post_detail' imagepost.slug %}"><h2>{{ imagepost.title }}</h2></a>
+                    <a href="{% url 'post_detail' imagepost.slug %}"><h2 class="tohover">{{ imagepost.title }}</h2></a>
                 </div>
             </div>
             <!-- Accordeon -->
@@ -60,7 +60,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="accordion-item">
+                <!--<div class="accordion-item">
                   <h3 class="accordion-header" id="headingThree">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                       Leave a Comment!
@@ -85,7 +85,7 @@
                       </div>
                     </div>
                   </div>
-                </div>
+                </div> -->
               </div>
             </div>
         </div>
