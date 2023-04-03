@@ -13,7 +13,7 @@ h2  {
     color:rgba(0, 0, 0, 0.8);
     text-decoration: none;
 }
-/*------------------------------------------- Header*/
+/*-------------------------------------------- Header*/
 
 .logo {
     background-color: rgba(86, 7, 12, 0.8);
@@ -42,7 +42,7 @@ h2  {
     font-size: 2rem;
 }
 
-/*------------------------------------------- Footer*/
+/*-------------------------------------------- Footer*/
 
 footer {
     background-color: rgba(86, 7, 12, 0.8);
@@ -79,7 +79,7 @@ img {
     height: 100%;
   }
 
-/*----------------------------- Post Information Box*/
+/*---------------------------- Post Information Box*/
 
 .post-info  {
     display: inline-block;
@@ -92,13 +92,13 @@ img {
     max-height: 300px;
 }
 
-/*------------------------------------- Post Card */
+/*=------------------------------------- Post Card */
 
 .accordion   {
     align-content: flex-end;
 }
 
-/*--------------------------------------- Buttons */
+/*---------------------------------------- Buttons */
 
 .btn    {
     background-color: rgba(86, 7, 12, 0.8);
@@ -109,4 +109,15 @@ img {
     background-color: #fff;
     color: rgb(145, 20, 20);
     border: none;
+}
+
+/*---------------------------------------- Alerts */
+
+.alert-fixed {
+    position:sticky; 
+    top: 0px; 
+    left: 0px; 
+    width: 100%;
+    z-index: 9; 
+    border-radius:0px
 }

@@ -63,12 +63,26 @@
                 <div class="accordion-item">
                   <h3 class="accordion-header" id="headingThree">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                      Writte a Message
+                      Leave a Comment!
                     </button>
                   </h3>
                   <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                        <input type="text">
+                      <div class="col">
+                        {% if commented %}
+                        <div class="alert alert-success" role="alert">
+                            Your comment is awaiting approval
+                        </div>
+                        {% else %}
+                            {% if user.is_authenticated %}
+                            <form method="post">
+                            {{ comment_form.text }}
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-small btn-secondary">Submit</button>
+                            </form>
+                            {% endif %}
+                        {% endif %}    
+                      </div>
                     </div>
                   </div>
                 </div>

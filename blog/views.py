@@ -91,7 +91,6 @@ class UserProfile(LoginRequiredMixin, View):
 
     def get(self, request):
         user = request.user
-        # queryset = ImagePost.objects.filter(status=1)
         image_posts = ImagePost.objects.filter(user=user)
         context = {'user': user, 'image_posts': image_posts, }
         return render(request, "profile.html", context)
