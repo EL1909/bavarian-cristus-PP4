@@ -65,7 +65,7 @@ EPICS
 -0-
 
 
-“Connect Cloudinary,  add config variables Database_url, Secret_key, Cloudinary_url, Port and Disable_collectstatic, and cloudinary to apps;  add staticfiles parameters, allowed hosts and template_dir in settings.py, create media, template and static folders and Procfile”
+“Connect Cloudinary,  add Heroku config variables Database_url, Secret_key, Cloudinary_url, Port and Disable_collectstatic, and cloudinary to apps;  add staticfiles parameters, allowed hosts and template_dir in settings.py, create media, template and static folders and Procfile”
 
 
 I tried migrate my created classes but terminal requested me to instal "Pillow" for Python to handle images - did not added via pip3 freeze
@@ -107,6 +107,8 @@ i solve it by typing 1, then true
 
 29.03.23    - Im having problems with loading the update.html template; when i click the button to upload a new post it doesn't load, shows 404 error; however if i add a / in the url file path, it does load the template, but does not add the new post.
 
+
+03.04.2023  - Trying to Deploy; im getting a <<Error while running '$ python manage.py collectstatic --noinput'>> 
 
 
 ## Classes

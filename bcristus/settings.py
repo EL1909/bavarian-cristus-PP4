@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
-#importing messages for UI 
 from django.contrib.messages import constants as messages
 import dj_database_url
 if os.path.isfile('env.py'):
