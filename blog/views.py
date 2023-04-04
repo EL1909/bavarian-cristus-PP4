@@ -162,11 +162,23 @@ def Post_edit(request, item_slug):
 @login_required
 def delete(request, item_slug):
     item = get_object_or_404(ImagePost, slug=item_slug, user=request.user)
-    item.delete()
-    # add a success message to the messages framework
-    messages.success(request, 'Post deleted')
-    return redirect('profile')
+    
+    if request.method == 'POST':
+        # Check if the user has confirmed the deletion
+        if request.POST.get('delete'):
+            item.delete()
+            # add a success message to the messages framework
+            messages.success(request, 'Post deleted')
+            return redirect('profile')
+    else:
+        # Render the confirmation template
+        return render(request, 'confirm_delete.html', {'item_slug': item_slug})
 
+
+@login_required
+def confirm_delete(request, item_slug):
+    item = get_object_or_404(ImagePost, slug=item_slug, user=request.user)
+    return render(request, 'confirm_delete.html', {'item': item})
 
 def about(request):
     return render(request, 'about.html')
