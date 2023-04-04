@@ -9,16 +9,17 @@ body {
     min-height: 100vh;
     display: flex; 
     flex-direction: column;
-    font-family: roboto, sans-serif ;
+    font-family: roboto, sans-serif;
 }
 
-h2 h5 {
+h2, h5  {
     display: inline-block;
     font-size: 120%;
     color:rgba(0, 0, 0, 0.8);
     text-decoration: none;
     font-family: cinzel decorative, sans-serif;
 }
+
 /*-------------------------------------------- Header*/
 
 .logo {
@@ -93,6 +94,14 @@ img {
 .post-info  {
     display: inline-block;
     max-height: 100px;
+}
+
+.tohover {
+    display: inline-block;
+    font-size: 120%;
+    color:rgba(0, 0, 0, 0.8);
+    text-decoration: none;
+    font-family: cinzel decorative, sans-serif;
 }
 
 .g-0 h2:hover {

@@ -347,11 +347,21 @@ With this tests i verified my CRUD operations to be working successfully for cre
 I ran test manually to verify message functionallity.
 
 1. Visiting the site without registration, messages functionallity is hidden.
+
+
+<img src="readme/messages1.png">
+
+
 2. From within a members account, the "Leave a Message:" field appears, Writte the message and submit.
+
+
+<img src="readme/messages2.png">
+
+
 3. The member is notified that this comment requires to be approved ny admin.
  
 
-
+<img src="readme/messages3.png">
 
 
 
@@ -360,6 +370,8 @@ I ran test manually to verify message functionallity.
 
 
 
+
+As i was doing the manual testing; somehow the CSS stop applying to the h2 elements.
 
 
 
