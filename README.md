@@ -67,13 +67,11 @@ From those answer I did set up 17 issues in GitHub as User Stories.
     - As an Admin, I can post members photos to our own Social media so that they have more visibility.
 
 
-AQUI VA FOTO DE UNA DE LAS USER STORIES DE GITHUB
-Image	![alt text](image.jpg)
+<img src="readme/userstory.png">
 
 Which then i organized using Moscow prioritazion.
 
-AQUI VA FOTO DE UNA DE LAS ETIQUETAS DE STORIES DE GITHUB
-Image	![alt text](image.jpg)
+<img src="readme/moscow.png">
 
 ## Database Design
     
@@ -122,10 +120,7 @@ The image_post foreign key in the Comment model is used to associate each commen
 The user foreign key in the Comment model is used to track the user who made the comment. This creates a one-to-many relationship between the User model and the Comment model, as each User can have multiple Comment instances associated with it.
 
 
-
-UPDATEUPDATEUPDATEUPDATEUPDATEUPDATE 
-
-<img src="media/readme/EDR-Bavarian-Cristus.png">
+<img src="readme/EDR-Bavarian-Cristus.png">
 
 
 ## Users Types
@@ -179,6 +174,7 @@ All this abilities were tested successfully.
 
 - Featured at the top of the page, the navigation shows the website's name in the left corner BAVARIAN CRISTUS, which is to be showed in every page and links to the home page.
 
+
 <img src="readme/navbar.png">
 
 
@@ -188,6 +184,7 @@ The menu collapses in a sandwich icon from medium media queries, and the navigat
 <img src="readme/navbarreduced.png">
 <img src="readme/navbarreduced2.png">
 
+
 ### Home Page
 
 The home page is designed to show a list with each post rendered as a Traditional Post Card; which contains fields to show information about the post. However features for writting a message from the card and export as PDF were hidden because are not functional yet.
@@ -196,6 +193,7 @@ In order to access the post, we must click either the image or the title of the 
 
 
 <img src="readme/PostCard.png">
+
 
 ### Post Details
 
@@ -225,9 +223,12 @@ By clicking the "Edit" button, members can edit their post's Title, Location, De
 
 By clicking the "Delete" button, members can delete their post, the button leads to a confirmation page for this action.
 
+
 <img src="readme/confirmdelete.png">
 
+
 At the bottom of the post page commes a map, the members will have the opportunity to tag the location where they took the photo. Is not properly connected yet.
+
 
 ### Profile page
 
@@ -244,10 +245,6 @@ The "about" link, brings the users to a static template with a brief explanation
 
 
 ## Manual Testing
-
-
-
-
 
 ### CRUD
 
@@ -364,14 +361,144 @@ I ran test manually to verify message functionallity.
 <img src="readme/messages3.png">
 
 
-
-- In the top-right corner, users can find the website menu; with three links redirecting to "Home", "Gallery' and "Post" pages respectively, each one has a diferent page.
-
+4. Once the comment is approvd by the Admin, will show in the post detail page.
 
 
+<img src="readme/messages4.png">
 
 
-As i was doing the manual testing; somehow the CSS stop applying to the h2 elements.
+**NOTE: As i was doing the manual testing; somehow the CSS stop applying to the h2 elements, you can see the difference in the screenshots.** 
+
+
+## Manual Testing
+
+I did wrote three automates test following the Django Blog walkthru project, however i didn't had time to actually run them.
+
+## Lighthouse
+
+## Project Creation Process
+
+I created this project following both "Django Blog" and the "I Think Therefore I Blog projects".
+
+I followed the stepst as Follows:
+
+### In Gitpod:
+
+1. Create a new repository in Github using Code's Institute template.
+2. Install Django and gunicorn.
+3. Install supporting libraries: pip3 install dj_database_url psycopg2
+4. Install Cloudinary Libraries: pip3 install dj3-cloudinary-storage
+5. Create requirements file: pip3 freeze --local > requirements.txt
+6. Create Project bcristus
+7. Add to installed apps:
+                INSTALLED_APPS = [
+                …
+                'APP_NAME',
+            ]
+8. Inside bcristus/settings.py
+    - Reference env.py (Note: font in bold is new)
+            from pathlib import Path
+            import os
+            import dj_database_url
+            if os.path.isfile("env.py"):
+            import env
+
+    - Remove the insecure secret key and replace - links to the SECRET_KEY variable on Heroku.
+    - Comment out the old DataBases Section.
+    - Add new DATABASES Section.
+    - Save all files and Make Migrations.
+    - Setup Cloudinary to store media and static files.
+    - Link file to the templates directory in Heroku.
+    - Change the templates directory to TEMPLATES_DIR
+    - Add Heroku Hostname to ALLOWED_HOSTS
+    
+9. Create media, templates and static folders on top level directory
+10. Create a Procfile on the top level directory and add web: gunicorn **bcristus**.wsgi
+11. Allauth installed to create user login functionality and updated to requirements.txt
+12. Crispyforms installed to allow members comment functionality and updated to requirements.txt.
+
+
+
+
+
+### In Heroku:
+
+1. Create a new external database
+2. Create the Heroku app
+3. Attach the database
+4. Prepare our environment and settings.py file
+5. Get our static and media files stored on Cloudinary.
+6. Create new Heroku App.
+7. Open the settings tab and Click Reveal Config Vars.
+8. Add a Config Var called DATABASE_URL.
+9. Add Cloudinary URL to Heroku Config Vars.
+10. Add DISABLE_COLLECTSTATIC to Heroku Config Vars.
+11. Add Cloudinary Libraries to installed apps
+12. Installed summernote and added to requirements via pip3 freeze, as editor for comments in backend.
+
+
+
+
+### In ElephantSQL:
+
+1. Log in to ElephantSQL and creaute an account.
+2. Click “Create New Instance”.
+3. Select the Tiny Turtle (Free) plan.
+4. Click “Select Region”.
+5. Check that your details are correct. Then click “Create instance”
+6. Return to the ElephantSQL dashboard and click on the database instance name for this project.
+7. Copy your ElephantSQL database URL using the Copy icon. It will start with postgres://
+
+
+### env.py
+
+Inside the project directory there was an env.py file uploaded with the template; inside i did the following changes:
+
+1. Import os library
+2. Set environment variables
+    - ["DATABASE_URL"]
+    - ["SECRET_KEY"] 
+    - ["CLOUDINARY_URL"]
+
+## Bugs
+
+### Unfixed:
+
+1. As i was doing the manual testing; somehow the style.css stop applying to the h2 elements, you can see the difference in the screenshots, wHich cause a major damage to the overall UI performance.
+
+2. I Still haven't found the way to make the alerts to appear without separating the neightbord conntainers. I know it must be a very simple solution, however i'm stuck with information
+
+
+### Fixed
+
+1. I tried to migrate my created models using an ImageField instead CloudinaryField to handle image's post; but terminal requested me to instal "Pillow" for Python to handle images.
+
+2. I wanted to update my model for comments by adding name and email fields, i was getting this error once i tried to migrate; i solve it by typing 1, then true [^1]
+
+3. I was getting an IntegrityError for trying to create an Object without loading properly the image. I changed the field-type in my model and updated the view; comments are stated in the code.
+
+
+<img src="readme/null1.png">
+
+
+4. After Crispyforms instalation and setup i wasn't able to render the website; i went thru the documentation and installed $ pip install crispy-bootstrap5 for bootstrap5.... and it worked.
+
+5. I was having an error when  calling the text from the imagePost to be displayed in the Post Card, it showed the text with HTML sintax; however when i call excerpt shows correctly. I found out that i was using the word "content" which turned to be one of hte restricted python words; i change the field name in my model to text; and it worked.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -395,17 +522,43 @@ As i was doing the manual testing; somehow the CSS stop applying to the h2 eleme
         - Profile page
         - About
 - Testing
+    - Manual testing
+        - CRUD
+        - Messages
+    - Automated testing
+    - LightHouse
+
+- Project Creation Process
 
 
-Code Validation
-Behavior Driven Development (BDD)
-Version Control Strategy
-- Unfixed Bugs
-Features to Improve
+- Bugs
+    - Unfixed
+    - Fixed
+- Features to Improve
+
+
 - Deployment
-Technology used
-Project Creation
+
+
 Deployment to Heroku
+
 - Credits
 Page Image Credits
 Book Genre Image Credits
+
+
+
+
+
+
+[^1]: python3 manage.py makemigrations
+You are trying to add a non-nullable field 'name' to comment without a default; we can't do that (the database needs something to populate existing rows)
+Please select a fix:
+ 1) Provide a one-off default now (will be set on all existing rows with a null value for this column)
+ 2) Quit, and let me add a default in models.py
+Select an option: 1
+Please enter the default value now, as valid Python
+The datetime and django.utils.timezone modules are available, so you can do e.g. timezone.now
+Type 'exit' to exit this prompt
+>>> True.
+
