@@ -120,7 +120,7 @@ def upload(request):
             slug = f"{slug}-{random_string}"
 
         # Create a new ImagePost object with the image URL
-        ImagePost.objects.create(title=title, slug=slug, user=user, author=user, image=image_url, location=location, text=text, status=1)
+        ImagePost.objects.create(title=title, slug=slug, user=user, author=user, image=image_url, location=location, text=text, status=0)
 
         # add a success message
         messages.success(request, 'Post successfully uploaded!')

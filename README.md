@@ -188,37 +188,169 @@ The menu collapses in a sandwich icon from medium media queries, and the navigat
 <img src="readme/navbarreduced.png">
 <img src="readme/navbarreduced2.png">
 
+### Home Page
 
-The home page is designed to show each post as a Traditional Post Card; wich contains fields to show information about the post. However features for writting a message from the card and export as PDF were hidden because are not functional yet.
+The home page is designed to show a list with each post rendered as a Traditional Post Card; which contains fields to show information about the post. However features for writting a message from the card and export as PDF were hidden because are not functional yet.
 
 In order to access the post, we must click either the image or the title of the post; clicking the name under "Posted By:" must take us to the profile from the member who upload the image.
 
 
 <img src="readme/PostCard.png">
 
+### Post Details
+
 Once Inside the post, we will look at the image in full size, with a frame according to the website colors.
 
 Below the image, we sill see the Post title and the likes functionallity; together with the number of comments written for this post.
 
-We can see too the name of the post's author. Here the posts can be edited or deleted. 
+We can see too the name of the post's author. Here the posts can be created, edited or deleted. 
 
 All comments that have been made for this post can be viewd here as well; if the user is authenticated will be able to post a message himself, will be only showed upon approval though. 
 
+
 <img src="readme/postdetail.png">
 
-At the bottom of the post page commes a map, the members will have the opportunity to tag the location where they took the photo. Is not properly connected yet.
 
-By clicking in the Member name, we will access his profile page, where he can find a button to upload new post, and all content that was already uploaded.
+By clicking the "Create" button, members can create new posts.
 
 
-<img src="readme/Profile.png">
+<img src="readme/create.png">
 
 
 By clicking the "Edit" button, members can edit their post's Title, Location, Description Text and replace the uploaded image; they can also make a post not publish.
 
+
 <img src="readme/edit.png">
 
-By clicking the "Delete" button, members can delete their post, there's no confirmation for this action.
+
+By clicking the "Delete" button, members can delete their post, the button leads to a confirmation page for this action.
+
+<img src="readme/confirmdelete.png">
+
+At the bottom of the post page commes a map, the members will have the opportunity to tag the location where they took the photo. Is not properly connected yet.
+
+### Profile page
+
+By clicking in the Member name, he will access his profile page, where he can find a button to upload new post, and all content that was already uploaded.
+
+
+<img src="readme/Profile.png">
+
+### About page
+
+The "about" link, brings the users to a static template with a brief explanation of the website's purpose (to be extended).
+
+<img src="readme/about.png">
+
+
+## Manual Testing
+
+
+
+
+
+### CRUD
+
+- I ran manual tests to create a new User.
+
+1. Click "Register" button at the left-top corner.
+
+<img src="readme/register1.png">
+
+
+2. Fill fields for Username, email (not required), Password and confirmation.
+    - Password Cannot be similar than username.
+
+    <img src="readme/register2.png">
+
+
+3. User is Successfully Created.
+    - Can See username and logged in icon.
+    - Can Click icon  at the top-left corner to Logout
+
+    <img src="readme/register3.png">
+
+Once the user was created, 
+
+- I ran manual tests to create a post.
+
+1. Click on the username and inside the page, click the "Create new Post" button.
+
+<img src="readme/create1.png">
+
+
+2. Complete all fields and upload an image, i did update an image intended to be replaced.
+
+
+<img src="readme/create2.png">
+
+
+3. The post shows succesfully in the user's profile.
+
+
+<img src="readme/create3.png">
+
+
+Once the post was created, 
+
+-   I ran manual test to Edit a Post.
+
+1. Click on the post's title in order to enter the Post Details page, Once inside, click on the "Edit" button.
+
+
+<img src="readme/edit1.png">
+
+
+2. Modify the fields to be updated.
+
+
+<img src="readme/edit2.png">
+
+
+3. Both Image and text content were updated succesfuly.
+
+
+<img src="readme/edit3.png">
+
+Once the post was edited, 
+
+-   I ran manual test to Delete a Post.
+
+1. Click on the title of the post we want to delete.
+
+
+<img src="readme/delete1.png">
+
+
+2. Click on the "Delete" Button
+
+
+<img src="readme/delete2.png">
+
+
+3. Will redirect to a confirmation page; we must confirm and the post will be deleted.
+
+
+<img src="readme/delete3.png">
+
+
+4. Will then redirect to the User's profile with no post to show.
+
+
+<img src="readme/delete4.png">
+
+
+With this tests i verified my CRUD operations to be working successfully for creating posts.
+
+### Messages
+
+I ran test manually to verify message functionallity.
+
+1. Visiting the site without registration, messages functionallity is hidden.
+2. From within a members account, the "Leave a Message:" field appears, Writte the message and submit.
+3. The member is notified that this comment requires to be approved ny admin.
+ 
+
 
 
 
@@ -244,25 +376,15 @@ By clicking the "Delete" button, members can delete their post, there's no confi
 - Users types
 - CRUD Capabilities
 - Features
-Admin Panel
-allauth authentication
-Home Page
-
-Favorites
-My Books
-Add a Book
-Delete a Book
-Modify a Book Entry
-Leaving a Comment
-Liking a Book
-Alerts
-Filter and Search
-Filter by User
-Filter by Genre
-Search by Author, Title, Description
-No Results Found
-404
+    - Design and Colors
+    - Navigation
+        - Home Page
+        - Post Detail
+        - Profile page
+        - About
 - Testing
+
+
 Code Validation
 Behavior Driven Development (BDD)
 Version Control Strategy

@@ -50,8 +50,9 @@
                     <a href="{% url 'profile' %}"><h2>{{ post.user }}</h2></a>
                 </div>
                 <!-- Edit and create post box-->
-                <div class="col-6 d-inline text-end">
+                <div class="col-6 d-flex text-end">
                 {% if user == post.user %}
+                <a href="{% url 'upload' %}"><button class="btn btn-secondary">Create</button></a>
                 <a href="{% url 'post_edit' post.slug %}"><button class="btn btn-secondary">Edit</button></a>
                 <a href="{% url 'confirm_delete' post.slug %}"><button class="btn btn-secondary">Delete</button></a>
                 {% endif %}
