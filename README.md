@@ -208,6 +208,17 @@ All comments that have been made for this post can be viewd here as well; if the
 
 At the bottom of the post page commes a map, the members will have the opportunity to tag the location where they took the photo. Is not properly connected yet.
 
+By clicking in the Member name, we will access his profile page, where he can find a button to upload new post, and all content that was already uploaded.
+
+
+<img src="readme/Profile.png">
+
+
+By clicking the "Edit" button, members can edit their post's Title, Location, Description Text and replace the uploaded image; they can also make a post not publish.
+
+<img src="readme/edit.png">
+
+By clicking the "Delete" button, members can delete their post, there's no confirmation for this action.
 
 
 

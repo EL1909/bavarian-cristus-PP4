@@ -68,20 +68,20 @@
             <h3>Comments:</h3>
             <div class="col-12">
                 <!--Post text-->
-                <p class="font-weight-bold">{{ post.user }} 
-                <small><span class="text-muted">
+                <p class="font-weight-bold"><h2>{{ post.user }}</h2>
+                <span class="text-muted">
                 {{ post.created_on }}  
-                </span></small> wrote:
-                </p>
+                </span> wrote:
+                </p></small>
                 {{ post.text | linebreaks }}
                 <!-- Comments -->
                 {% for comment in comments %}
-                <p class="font-weight-bold">
-                {{ comment.name }}
-                <small><span class="text-muted">
+                <small><p class="font-weight-bold">
+                <h2>{{ comment.name }}</h2>
+                <span class="text-muted">
                 {{ comment.created_on }}
-                </span></small> wrote:
-                </p>
+                </span> wrote:
+                </p></small>
                 {{ comment.text | linebreaks }}
                 {% endfor %}
             </div>              

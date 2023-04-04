@@ -97,6 +97,7 @@ img {
 
 .g-0 h2:hover {
     color: rgba(86, 7, 12, 0.8);
+    text-decoration: 5px underline;
 }
 
 /*------------------------------------ Comments Box*/
@@ -119,7 +120,7 @@ img {
 }
 
 .btn-like   {
-    background-color: antiquewhite;
+    background-color: #fff;
     color: rgb(145, 20, 20);
     border: none;
 }
