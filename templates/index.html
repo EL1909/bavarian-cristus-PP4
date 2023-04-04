@@ -17,7 +17,7 @@
 <div class="container">
     {% for imagepost in imagepost_list %} 
     <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative bg-light " style="height: 500px; overflow: hidden;">
-        <div class="col-md-6 p-4 image-container">
+        <div class="col-md-6 p-4" style="height: 490px; overflow: hidden;>
             <a href="{% url 'post_detail' imagepost.slug %}"><img src="{{ imagepost.image.url }}" width="100%" alt="{{ imagepost.title }}"></a>
         </div>
         <div class="col-md-6 p-4">
