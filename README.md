@@ -4,6 +4,41 @@
 
 [Click here to visit repository.](https://github.com/EL1909/bavarian-cristus-PP4.git)
 
+
+---
+
+- [Introduction](#bavarian-cristus)
+- [Working Metodology](#working-methodology)
+    - [User Stories](#user-stories)
+    - [Moscow Prioritization](#moscow-prioritization)
+- [Database Design](#database-design)
+    - [Database Relationships](#database-relationships)
+    - [Models](#models)
+- [Users types](#users-types)
+- [CRUD Capabilities](#crud-capabilities)
+- [Features](#features)
+    - [Design and Colors](#design-and-colors)
+    - [Navigation](#navigation)
+        - [Home Page](#Home_Page)
+        - [Post Detail](#Post_Detail)
+        - [Profile page](#profile-page)
+        - [About](#about-page)
+        - [Likes](#likes)
+- [Testing](#manual-testing)
+    - [Manual testing](#manual-testing)
+        - [CRUD](#crud)
+        - [Messages](#messages)
+    - [Automated testing](#automated-testing)
+    - [CSS Validator](#css-validator)
+    - [LightHouse](#lighthouse)
+- [Project Creation Process](#project-creation-process)
+- [Deployment to Heroku](#deploy-to-heroku)
+- [Bugs](#bugs)
+    - [Unfixed](#unfixed)
+    - [Fixed](#fixed)
+- [Features to Improve](#features-to-improve)
+- [Credits](#credits)
+
 ---
 
 
@@ -12,10 +47,6 @@ Bavarian Cristus is a website created by Luciano Fernández with the purpouse of
 Users of the website are able to see images and also upload their own taken photos to a Jesus statue, as long as they are taken within Bavaria.
 
 They will be also able to tag the location of the photo. This will allow visitors to find exactly where the statue is located.
-
-
-AQUI VA FOTO DE LAS CAPTURAS DE PANTALLA DEL MEDIDOR DE RESPONSIVIDAD
-Image	![alt text](image.jpg)
 
 In the home page, visitors can watch a list of post; each card appears to be a traditional PostCard. Among others, an expected update of this website will be allowing to create a PDF file from those post card; to be shared or even sent per post upon request.
 
@@ -74,6 +105,8 @@ From those answer I did set up 17 issues in GitHub as User Stories.
 
 <img src="readme/userstory.png">
 
+
+## Moscow Prioritization
 Which then i organized using Moscow prioritazion.
 
 <img src="readme/moscow.png">
@@ -379,9 +412,12 @@ I ran test manually to verify message functionallity.
 **NOTE: As i was doing the manual testing; somehow the CSS stop applying to the h2 elements, you can see the difference in the screenshots.** 
 
 
-## Manual Testing
+## Automated Testing
 
 I did wrote three automates test following the Django Blog walkthru project, however i didn't had time to actually run them.
+
+## CSS Validator
+Css validator showed no errors.
 
 ## Lighthouse
 
@@ -485,6 +521,8 @@ deploy from branch, selected GitHub branch and clicked on Deploy button.
 ### Unfixed:
 
 1. As i was doing the manual testing; somehow the style.css stop applying to the h2 elements, you can see the difference in the screenshots, wHich cause a major damage to the overall UI performance.
+    
+    As you can see in my commits on gitpod; i did not had the time to review this bug prior submission date.
 
 2. I Still haven't found the way to make the alerts to appear without separating the neightbord containers. I know it must be a very simple solution, however i'm stuck with information
 
@@ -533,45 +571,7 @@ Without them it would have been totally unrealistic to complete this project in 
 
 
 
-
-
-
-- Introduction
-- Working Metodology
-    - User Stories
-    - Moscow Prioritization
-- Database Design
-    - Database Relationships
-    - Models
-- Users types
-- CRUD Capabilities
-- Features
-    - Design and Colors
-    - Navigation
-        - Home Page
-        - Post Detail
-        - Profile page
-        - About
-        - Likes
-- Testing
-    - Manual testing
-        - CRUD
-        - Messages
-    - Automated testing
-    - LightHouse
-
-- Project Creation Process
-- Deployment to Heroku
-- Bugs
-    - Unfixed
-    - Fixed
-- Features to Improve
-
-
-
-
-
-
+Notes
 
 [^1]: python3 manage.py makemigrations
 You are trying to add a non-nullable field 'name' to comment without a default; we can't do that (the database needs something to populate existing rows)
@@ -582,5 +582,5 @@ Select an option: 1
 Please enter the default value now, as valid Python
 The datetime and django.utils.timezone modules are available, so you can do e.g. timezone.now
 Type 'exit' to exit this prompt
->>> True.
+True.
 
