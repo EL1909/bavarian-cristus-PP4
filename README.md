@@ -1,6 +1,11 @@
-#  [Bavarian Cristus](https://bcristus.herokuapp.com/)
+# [Bavarian Cristus](https://bcristus.herokuapp.com/)
 
 [Click here to visit the site.](https://bcristus.herokuapp.com)
+
+[Click here to visit repository.](https://github.com/EL1909/bavarian-cristus-PP4.git)
+
+---
+
 
 Bavarian Cristus is a website created by Luciano Fernández with the purpouse of allowing all people interested in Jesus Christ, that also enjoy to take and share photos, and happen to be residents or visiting Bavaria, to share their pictures and thoughts about images shared by others.
 
@@ -12,18 +17,18 @@ They will be also able to tag the location of the photo. This will allow visitor
 AQUI VA FOTO DE LAS CAPTURAS DE PANTALLA DEL MEDIDOR DE RESPONSIVIDAD
 Image	![alt text](image.jpg)
 
-In the home page, visitors can watch a list of post; each card appears to be a traditional PostCard. !! Among others, an expected update of this website will be allowing to create a PDF file from those post card; to be shared or even sent per post upon request.
+In the home page, visitors can watch a list of post; each card appears to be a traditional PostCard. Among others, an expected update of this website will be allowing to create a PDF file from those post card; to be shared or even sent per post upon request.
 
-AQUI VA FOTO DE UNA DE LAS POSTALES, AGREGALE UN SIMBOLO DE EXPORTAR PDF
-Image	![alt text](image.jpg)
+<img src="readme/PostCard.png">
 
-The post card contains an image and information about the author of the picture; !! those fields as well as messages could be printed or not upon request of the member using checkboxes. Members of the community can also comment and like other posts.
+The post card contains an image and information about the author of the picture; those fields as well as messages could be printed or not upon request of the member using checkboxes. Members of the community can also comment and like other posts.
 
-In this version, each post have a location tag to locate the statue. !! in future releases, the user will be able to tag the exact location, this is with the purpouse of making routes for tourists and groups of visitors and guided tours.
+In this version, each post have a location tag to locate the statue. In future releases, the user will be able to tag the exact location, this is with the purpouse of making routes for tourists and groups of visitors and guided tours.
 
-Footer; in the footer there's access to social network and the traditional rights reservation statement.
+In the footer there's access to social network and the traditional rights reservation statement.
 
 The website is written within github development enviroment, using Django as MVC (MVT) framework and deployed to Heroku. All images and static files are being hosted in Cloudinary.
+
 
 ## Working Methodology
 
@@ -175,7 +180,7 @@ All this abilities were tested successfully.
 - Featured at the top of the page, the navigation shows the website's name in the left corner BAVARIAN CRISTUS, which is to be showed in every page and links to the home page.
 
 
-<img src="readme/navbar.png">
+<img src="readme/navtop.png">
 
 
 The menu collapses in a sandwich icon from medium media queries, and the navigation elements get underlined when displayed.
@@ -242,6 +247,10 @@ By clicking in the Member name, he will access his profile page, where he can fi
 The "about" link, brings the users to a static template with a brief explanation of the website's purpose (to be extended).
 
 <img src="readme/about.png">
+
+### Likes
+
+Inside the Post detail, there is an icon for the user to like the post. If the user has already liked the post, the icon is filled. Otherwise it is empty. The total likes are displayed next to the icon. When the user clicks on the like icon, the status toggles - like goes to unlike and vice versa.
 
 
 ## Manual Testing
@@ -460,13 +469,26 @@ Inside the project directory there was an env.py file uploaded with the template
     - ["SECRET_KEY"] 
     - ["CLOUDINARY_URL"]
 
+## Deploy to Heroku
+
+    Before final deployment, the debug setting in settings.py was set to false;
+
+DEBUG = False
+
+then the DISABLE_COLLECTSTATIC config var in Heroku was removed, connect to github repository and 
+deploy from branch, selected GitHub branch and clicked on Deploy button.
+
+
+
 ## Bugs
 
 ### Unfixed:
 
 1. As i was doing the manual testing; somehow the style.css stop applying to the h2 elements, you can see the difference in the screenshots, wHich cause a major damage to the overall UI performance.
 
-2. I Still haven't found the way to make the alerts to appear without separating the neightbord conntainers. I know it must be a very simple solution, however i'm stuck with information
+2. I Still haven't found the way to make the alerts to appear without separating the neightbord containers. I know it must be a very simple solution, however i'm stuck with information
+
+3. Overall code revision in order to make it more efficient, by loading small scripts without needing to update the whole page, when liking a post for example.
 
 
 ### Fixed
@@ -486,19 +508,28 @@ Inside the project directory there was an env.py file uploaded with the template
 5. I was having an error when  calling the text from the imagePost to be displayed in the Post Card, it showed the text with HTML sintax; however when i call excerpt shows correctly. I found out that i was using the word "content" which turned to be one of hte restricted python words; i change the field name in my model to text; and it worked.
 
 
+## Features to Improve
+
+- Allow members to create a PDF file from those post card; to be shared or even sent per post upon request.
+- The fields in the PostCard, as well as messages could be printed, or not upon request of the member using checkboxes. 
+- Members of the community will be able to also comment, edit and like other posts.
+- Better placing the information for better UI performance.
+- Allow visitors to Signup using social media.
+- Allow members to update the post's location using geoTag.
+- Visitors will be able to see the statue's location.
+- Allow members to share the post images to their own social media.
 
 
+## Credits
 
+- First of all to my family, for allowing me the time to accomplish this classes.
+- I'll like to give a credit to [Paul Thomas O'Riordan](https://github.com/paulie-o74) for hosting our weekly thursday meetings, and to "The people from the future", [Tony Albanese](https://github.com/tony-albanese), [Roshna Vakkeel](https://github.com/RoshnaVakkeel) and [Vivi Gnutz](https://github.com/vivignutz).
 
+I found their guidance not just helpful but a "must" condition in order to organize the time and select wich contents to start learning. 
 
-
-
-
-
-
-
-
-
+Without them it would have been totally unrealistic to complete this project in this timeframe.
+- [Chuck Severance Youtube's channel.](https://www.youtube.com/@ChuckSeverance) With Mr. Severance i took a deeper diving into Database Models and MVC framework's theory.
+- All media content uploaded to the website belong to me.
 
 
 
@@ -521,6 +552,7 @@ Inside the project directory there was an env.py file uploaded with the template
         - Post Detail
         - Profile page
         - About
+        - Likes
 - Testing
     - Manual testing
         - CRUD
@@ -529,22 +561,12 @@ Inside the project directory there was an env.py file uploaded with the template
     - LightHouse
 
 - Project Creation Process
-
-
+- Deployment to Heroku
 - Bugs
     - Unfixed
     - Fixed
 - Features to Improve
 
-
-- Deployment
-
-
-Deployment to Heroku
-
-- Credits
-Page Image Credits
-Book Genre Image Credits
 
 
 
