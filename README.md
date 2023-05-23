@@ -1,20 +1,20 @@
-# [Bavarian Cristus](https://bcristus.herokuapp.com/)
+# [Bavarian Cristus](https://bcristus.herokuapp.com/) v2
 
 [Click here to visit the site.](https://bcristus.herokuapp.com)
 
 [Click here to visit repository.](https://github.com/EL1909/bavarian-cristus-PP4.git)
 
-
 ---
 
 - [Introduction](#bavarian-cristus)
-- [Working Metodology](#working-methodology)
+- [Assessment Results](#assessment-results)
+- [Working Methodology](#working-methodology)
     - [User Stories](#user-stories)
     - [Moscow Prioritization](#moscow-prioritization)
 - [Database Design](#database-design)
     - [Database Relationships](#database-relationships)
     - [Models](#models)
-- [Users types](#users-types)
+- [Users Types](#users-types)
 - [CRUD Capabilities](#crud-capabilities)
 - [Features](#features)
     - [Design and Colors](#design-and-colors)
@@ -25,10 +25,10 @@
         - [About](#about-page)
         - [Likes](#likes)
 - [Testing](#manual-testing)
-    - [Manual testing](#manual-testing)
+    - [Manual Testing](#manual-testing)
         - [CRUD](#crud)
         - [Messages](#messages)
-    - [Automated testing](#automated-testing)
+    - [Automated Testing](#automated-testing)
     - [CSS Validator](#css-validator)
     - [LightHouse](#lighthouse)
 - [Project Creation Process](#project-creation-process)
@@ -59,6 +59,39 @@ In this version, each post have a location tag to locate the statue. In future r
 In the footer there's access to social network and the traditional rights reservation statement.
 
 The website is written within github development enviroment, using Django as MVC (MVT) framework and deployed to Heroku. All images and static files are being hosted in Cloudinary.
+
+## Assessment Results
+
+This is the second version i make of this website, the following list contains notes from assessor and steps taken to deliver a solution.
+
+- All text needs to have a positive font color contrast ratio.
+    - MODIFY color scheme on text areas.
+- Favicon should be included for the website.
+    - Added favicon.ico to root directory.
+- The website is responsive but users need to be allowed to store and manipulate data records about a particular domain.
+    - I DONT get this one yet
+- Ensure that all user stories have a descriptive user acceptance criteria.
+    - To be implemented in future projects.
+- Error pages should be implemented.
+    - CONNECTC ERROR PAGES
+- Clicking on like on a post results in a not found error.
+    - VERIFY LIKED LINKS 
+- Additionally all attempts to create a post resulted in a not found error when the post was clicked on.
+    - THIS error was caused due a permission configuration, now post can be published without admin's approval.
+- The CRUD logic for users to create, locate, display, edit and delete records is present, but not fully implemented to work as expected.
+    - REVIEW WHOLE CRUD PROCESS AGAIN
+- Implement form validation and verification so that users cannot submit blank or incorrectly filled forms. 
+    - I DONT KNOW HOW TO DO THIS YET
+- All attempts to create a post resulted in a not found error when the post was clicked on.
+    - THIS error was caused due a permission configuration, now post can be published without admin's approval.
+- The testing process needs to be documented in a little more detail to explain all the manual and automated tests undertaken including the testing steps, results and outcomes of each test and this should also include user story testing.
+    - REVIEW WHOLE CRUD PROCESS AGAIN
+- The website needs to provide options for effective user actions, with relevant feedback for all user actions.
+    - I DONT KNOW HOW TO DO THIS YET
+
+    ## NEW FEATURES v2
+- AS A USER, I CAN SEND THE POST VIA REGULAR MAIL 
+- 
 
 
 ## Working Methodology
