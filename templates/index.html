@@ -14,9 +14,9 @@
 </div>
 <br>
 <!-- PostCard -->
-<div class="container">
+<div class="container post-container">
     {% for imagepost in imagepost_list %} 
-    <div class="row post-card rounded overflow-hidden flex-md-row mb-4 shadow-sm position-relative">
+    <div class="row post-row rounded mb-4 shadow-sm">
         <div class="col-md-6 p-4">
             <a href="{% url 'post_detail' imagepost.slug %}"><img src="{{ imagepost.image.url }}" width="100%" alt="{{ imagepost.title }}"></a>
         </div>
