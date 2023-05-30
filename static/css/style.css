@@ -5,7 +5,7 @@
 /*---------------------------------------------- Body*/
 
 body {
-    background-color: #c39b72b7;
+    background-color: antiquewhite;
     min-height: 100vh;
     display: flex; 
     flex-direction: column;
@@ -44,7 +44,7 @@ h2, h5  {
 /*------------------------------------------ MainText*/
 
 .maintext {
-    background-color: #ad8762;
+    background-color: #a36f3be4;
     color: antiquewhite;
     width: 100%;
     height: 120px;
@@ -122,30 +122,39 @@ img {
 .post-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Horizontally center the posts */
-    align-items: center; /* Vertically center the posts */
-    /* Add any additional styling you need */
+    justify-content: center;
+    align-items: center; 
 }
 
 .container .post-row {
     /* Set a fixed height for the post container */
-    width: 80%;
+    width: 850px;
     height: 500px;
     background-color: rgb(241, 241, 240);
     overflow: hidden;
-
-    /* Add any additional styling you need */
 }
 
-.container .post-row .post-image {
+.container .post-row .postcard-image {
     /* Make the post image adapt its size to the post-row */
+    max-height: 100%;
     width: 100%;
-    height: 100%;
-    object-fit: cover; /* Adjust the image's aspect ratio if needed */
+    object-fit: cover;
 }
+
+.postcard-image
+
 
 .accordion   {
     align-content: flex-end;
+}
+
+.accordion-item  {
+    background-color: none;
+}
+
+.accordion-header   {
+    background-color: none;
+    align-content: right;
 }
 
 /*---------------------------------------- Buttons */
