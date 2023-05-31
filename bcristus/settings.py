@@ -32,7 +32,7 @@ DEBUG = True
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-ALLOWED_HOSTS = ['bcristus.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['bcristus.herokuapp.com', 'localhost', '8000-el1909-bavariancristusp-2exs9z2egnt.ws-eu98.gitpod.io']
 
 
 # Application definition

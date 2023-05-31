@@ -73,17 +73,16 @@ class postDetail(DetailView):
         )
 
 
-class postLike(View):
-
+class postLike(LoginRequiredMixin, View):
     def post(self, request, slug):
-        post = get_object_or_404(ImagePost, slug=slug, user=request.user)
+        post = ImagePost.objects.get(slug=slug)
 
         if post.likes.filter(id=request.user.id).exists():
             post.likes.remove(request.user)
         else:
             post.likes.add(request.user)
 
-        return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+        return redirect('post_detail', slug=slug)
 
 
 class userProfile(LoginRequiredMixin, View):
@@ -162,7 +161,7 @@ def Post_edit(request, item_slug):
 @login_required
 def delete(request, item_slug):
     item = get_object_or_404(ImagePost, slug=item_slug, user=request.user)
-    
+
     if request.method == 'POST':
         # Check if the user has confirmed the deletion
         if request.POST.get('delete'):
@@ -179,6 +178,7 @@ def delete(request, item_slug):
 def confirm_delete(request, item_slug):
     item = get_object_or_404(ImagePost, slug=item_slug, user=request.user)
     return render(request, 'confirm_delete.html', {'item': item})
+
 
 def about(request):
     return render(request, 'about.html')

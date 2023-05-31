@@ -132,7 +132,6 @@ img {
     height: 480px;
     border: 1px solid #a36f3b6a;
     background-color: rgb(241, 241, 240);
-    
 }
 
 .postcard-frame {
@@ -141,8 +140,6 @@ img {
     border-top: 10px solid rgb(241, 241, 240);
     /* border-bottom: 8px solid rgb(241, 241, 240); */
     overflow: hidden;
-
-
 }
 
 .container .postcard-frame .postcard-image {
@@ -151,13 +148,10 @@ img {
     width: auto;
     object-fit: contain;
     overflow: hidden;
-    /* border: 5 */
 }
 
 .accordion   {
     align-content: flex-end;
-    color: green;
-    
 }
 
 .accordion-item  {
@@ -168,7 +162,7 @@ img {
 
 .accordion-header   {
     background-color:red;
-    align-content: right;
+    align-content: left;
 }
 
 .accordion-collapse {
