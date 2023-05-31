@@ -129,32 +129,49 @@ img {
 .container .post-row {
     /* Set a fixed height for the post container */
     width: 850px;
-    height: 500px;
+    height: 480px;
+    border: 1px solid #a36f3b6a;
     background-color: rgb(241, 241, 240);
+    
+}
+
+.postcard-frame {
+    width: 420px;
+    height: 470px;
+    border-top: 10px solid rgb(241, 241, 240);
+    /* border-bottom: 8px solid rgb(241, 241, 240); */
     overflow: hidden;
+
+
 }
 
-.container .post-row .postcard-image {
-    /* Make the post image adapt its size to the post-row */
-    max-height: 100%;
-    width: 100%;
-    object-fit: cover;
+.container .postcard-frame .postcard-image {
+    /* Make the post image adapt its size to the post-frame */
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    overflow: hidden;
+    /* border: 5 */
 }
-
-.postcard-image
-
 
 .accordion   {
     align-content: flex-end;
+    color: green;
+    
 }
 
 .accordion-item  {
-    background-color: none;
+    color:black;
+    background-color:rgb(241, 241, 240);
+    border: 6px solid rgb(241, 241, 240);
 }
 
 .accordion-header   {
-    background-color: none;
+    background-color:red;
     align-content: right;
+}
+
+.accordion-collapse {
 }
 
 /*---------------------------------------- Buttons */
