@@ -5,8 +5,7 @@
 <div class="container">
     <div class="row">
         <div class="col-6 p-4">
-          <h1>{{ user.username }}'s Profile</h1>
-          <h2>Uploaded Images</h2>
+          <h2>{{ user.username }}'s Profile</h2>
         </div>
         <div class="col-6 p-4 text-end">
           <a href="{% url 'upload' %}" class="btn btn-secondary">Create new Post</a>
@@ -18,14 +17,15 @@
     {% if image_posts %}
     <div class="row">
         {% for post in image_posts %}
-        <div class="col-md-4">
-            <div class="card mb-4 shadow-sm">
+        <div class="col-md-4 mb-4 card">
+            <div class="card-img mb-4 shadow-sm">
             <a href="{% url 'post_detail' post.slug %}">
               <img class="card-img-top" src="{{ post.image.url }}" alt="{{ post.title }}">
             </a>
               <div class="card-body">
-                <a href="{% url 'post_detail' post.slug %}"><h5 class="card-title">{{ post.title }}</h5></a>
-                <p class="card-text">{{ post.text }}</p>
+                <a href="{% url 'post_detail' post.slug %}">
+                  <h5 class="card-title">{{ post.title }}</h5>
+                </a>
                 <small><p class="card-text text-muted">{{ post.created_on|date:"F j, Y" }}</p></small>
               </div>
             </div>
