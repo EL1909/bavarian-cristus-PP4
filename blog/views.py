@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404, reverse
 from django.views.generic import View, DetailView, ListView
 from django.http import HttpResponse, HttpResponseRedirect
+from django.contrib.auth.models import User
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
@@ -86,9 +87,16 @@ class postLike(LoginRequiredMixin, View):
 
 
 class userProfile(LoginRequiredMixin, View):
-
     def get(self, request):
         user = request.user
+        image_posts = ImagePost.objects.filter(user=user)
+        context = {'user': user, 'image_posts': image_posts, }
+        return render(request, "profile.html", context)
+
+
+class authorProfile(LoginRequiredMixin, View):
+    def get(self, request, username):
+        user = get_object_or_404(User, username=username)
         image_posts = ImagePost.objects.filter(user=user)
         context = {'user': user, 'image_posts': image_posts, }
         return render(request, "profile.html", context)
@@ -101,12 +109,13 @@ def upload(request):
         slug = slugify(title)
         user = request.user
         author = request.POST.get('user')
+        excerpt = request.POST.get('text')
 
         # Use request.FILES to get the uploaded image
         image = request.FILES.get('image')
         location = request.POST.get('location')
         text = request.POST.get('text')
-        status = 0
+        status = 1
 
         # Save the image to Cloudinary
         response = cloudinary.uploader.upload(image)

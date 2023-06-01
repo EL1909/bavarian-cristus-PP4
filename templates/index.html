@@ -26,7 +26,7 @@
             <div class="row">
                 <div class="col">
                     <p>Posted by:</p> 
-                    <a href="{% url 'profile' %}"><h2 class="tohover">{{ imagepost.user }}</h2></a>
+                    <a href="{% url 'author_profile' username=user.username %}"><h2 class="tohover">{{ imagepost.user }}</h2></a>
                 </div>
                 <div class="col d-inline text-end">
                     <p>Title:</p>
