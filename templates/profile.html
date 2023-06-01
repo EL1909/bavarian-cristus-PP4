@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<div class="container">
+<div class="container-fluid top-profile">
     <div class="row">
         <div class="col-6 p-4">
           <h2>{{ user.username }}'s Profile</h2>
@@ -11,8 +11,8 @@
           <a href="{% url 'upload' %}" class="btn btn-secondary">Create new Post</a>
         </div>
     </div>
-</div>  
-<hr>
+</div>
+<br>
 <div class="container">
     {% if image_posts %}
     <div class="row">
