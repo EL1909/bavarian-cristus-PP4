@@ -1,5 +1,3 @@
-/* Imported fonts from google Cinzel Decorative and Roboto*/
-
 /*---------------------------------------------- Body*/
 
 body {
@@ -168,7 +166,7 @@ img {
 
 /*---------------------------------------- Profile */
 
-.container .card {
+.container .profile-card {
     /* Set a fixed height for the post container */
     width: 300px;
     height: 400px;
@@ -179,8 +177,8 @@ img {
 
 .container .card-img  {
     width: 300px;
-    height: 320px;
-    border: 1px solid #a36f3b6a;
+    height: 420px;
+    /* border: 1px solid #a36f3b6a; */
     background-color: rgb(241, 241, 240); 
 }
 
@@ -188,7 +186,7 @@ img {
     /* Set a fixed height for the post container */
     width: 100%;
     height: 100%;
-    border: 1px solid #a36f3b6a;
+    /* border: 1px solid #a36f3b6a; */
     object-fit: contain;
 }
 

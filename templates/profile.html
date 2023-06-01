@@ -17,16 +17,16 @@
     {% if image_posts %}
     <div class="row">
         {% for post in image_posts %}
-        <div class="col-md-4 mb-4 card">
-            <div class="card-img mb-4 shadow-sm">
-            <a href="{% url 'post_detail' post.slug %}">
-              <img class="card-img-top" src="{{ post.image.url }}" alt="{{ post.title }}">
-            </a>
+        <div class="col-md-4 m-2 profile-card">
+            <div class="card-img shadow-sm">
+              <a href="{% url 'post_detail' post.slug %}">
+                <img class="card-img-top" src="{{ post.image.url }}" alt="{{ post.title }}">
+              </a>
               <div class="card-body">
                 <a href="{% url 'post_detail' post.slug %}">
                   <h5 class="card-title">{{ post.title }}</h5>
                 </a>
-                <small><p class="card-text text-muted">{{ post.created_on|date:"F j, Y" }}</p></small>
+                <small><p class="card-text text-muted text-end">{{ post.created_on|date:"F j, Y" }}</p></small>
               </div>
             </div>
         </div>
