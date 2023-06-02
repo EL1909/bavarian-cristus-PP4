@@ -88,7 +88,7 @@ class postLike(LoginRequiredMixin, View):
 
 class userProfile(LoginRequiredMixin, View):
     def get(self, request):
-        user = request.user
+        user = self.request.user
         image_posts = ImagePost.objects.filter(user=user)
         context = {'user': user, 'image_posts': image_posts, }
         return render(request, "profile.html", context)
@@ -96,9 +96,9 @@ class userProfile(LoginRequiredMixin, View):
 
 class authorProfile(LoginRequiredMixin, View):
     def get(self, request, username):
-        user = get_object_or_404(User, username=username)
-        image_posts = ImagePost.objects.filter(user=user)
-        context = {'user': user, 'image_posts': image_posts, }
+        author = get_object_or_404(User, username=username)
+        image_posts = ImagePost.objects.filter(author=author)
+        context = {'author': author, 'image_posts': image_posts, }
         return render(request, "profile.html", context)
 
 
