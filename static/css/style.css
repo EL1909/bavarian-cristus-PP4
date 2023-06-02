@@ -127,14 +127,13 @@ img {
     width: 850px;
     height: 480px;
     border: 1px solid #a36f3b6a;
-    background-color: rgb(241, 241, 240);
+    background-color: rgba(251, 251, 244, 0.93);
 }
 
 .postcard-frame {
     width: 420px;
     height: 470px;
-    border-top: 10px solid rgb(241, 241, 240);
-    /* border-bottom: 8px solid rgb(241, 241, 240); */
+    border-top: 10px solid rgba(251, 251, 244, 0.93);
     overflow: hidden;
 }
 
@@ -146,23 +145,24 @@ img {
     overflow: hidden;
 }
 
-.accordion   {
+.accordion .accordion-item  {
     align-content: flex-end;
-}
-
-.accordion-item  {
     color:black;
-    background-color:rgb(241, 241, 240);
-    border: 6px solid rgb(241, 241, 240);
+    background-color:rgba(251, 251, 244, 0.93);
+    border: 6px solid rgba(251, 251, 244, 0.93);
 }
 
 .accordion-header   {
-    background-color:red;
-    align-content: left;
+    border: 6px solid rgba(251, 251, 244, 0.93);
+    border-bottom: 1px solid rgba(95, 95, 88, 0.497);
+    padding-top: 10px;
 }
 
-.accordion-collapse {
-}
+/* Styles for the accordion tab before expanding */
+.collapsed {
+    background-color: rgba(251, 251, 244, 0.93);
+  }
+
 
 /*---------------------------------------- Profile */
 
@@ -224,11 +224,11 @@ img {
 /*---------------------------------------- Alerts */
 
 .alert-fixed {
-    position:sticky; 
-    top: 0px; 
-    left: 0px; 
+    position:absolute; 
+    top: 100px; 
+    left: 0; 
     width: 100%;
-    z-index: 9; 
+    z-index: 2000; 
     border-radius:0px
 }
 
