@@ -149,7 +149,7 @@ img {
     align-content: flex-end;
     color:black;
     background-color:rgba(251, 251, 244, 0.93);
-    border: 6px solid rgba(251, 251, 244, 0.93);
+    border: none;
 }
 
 .accordion-header   {
@@ -162,7 +162,6 @@ img {
 .collapsed {
     background-color: rgba(251, 251, 244, 0.93);
   }
-
 
 /*---------------------------------------- Profile */
 
