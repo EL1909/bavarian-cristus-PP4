@@ -7,6 +7,7 @@ from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
 from cloudinary.forms import cl_init_js_callbacks
 from django.utils.text import slugify
+from django.template.defaultfilters import slugify
 from django.contrib import messages
 from django import forms
 from .models import ImagePost
@@ -113,8 +114,11 @@ def upload(request):
             image_post.status = 1
 
             # Save the image to Cloudinary
-            response = cloudinary.uploader.upload(form.cleaned_data['image'])
+            response = cloudinary.uploader.upload(request.FILES['image'])
             image_post.image = response['secure_url']
+
+            # Generate a Excerpt from text
+            # image_post.excerpt = image_post.text
 
             # Generate a unique slug
             image_post.slug = slugify(image_post.title)
@@ -125,8 +129,7 @@ def upload(request):
     else:
         form = ImagePostForm()
 
-    return render(request, 'upload.html', {'form': form})
-
+    return render(request, 'upload.html', {"form": form},)
 
 @login_required
 def Post_edit(request, item_slug):

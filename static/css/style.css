@@ -139,7 +139,7 @@ img {
 
 .container .postcard-frame .postcard-image {
     /* Make the post image adapt its size to the post-frame */
-    height: 100%;
+    height: auto;
     width: auto;
     object-fit: contain;
     overflow: hidden;
@@ -193,14 +193,15 @@ img {
     height: 320px;
     border: 1px solid #a36f3b6a;
     background-color: rgb(241, 241, 240);
+    overflow: hidden;
 }
 
 .container .card-img-top   {
     /* Set a fixed height for the post container */
     width: auto;
-    height: 100%;
+    height: auto;
     border: 1px solid #a36f3b6a;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 /*---------------------------------------- Buttons */

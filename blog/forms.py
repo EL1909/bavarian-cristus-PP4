@@ -1,11 +1,11 @@
-from django.forms import ModelForm
+from django import forms
 from django.core.exceptions import ValidationError
 from .models import ImagePost, Comment
 
-class ImagePostForm(ModelForm):
+class ImagePostForm(forms.ModelForm):
     class Meta:
         model = ImagePost
-        fields = ['title', 'image', 'location', 'text', 'status']
+        fields = ['title', 'image', 'location', 'text',]
 
     def clean_text(self):
         text = self.cleaned_data.get('text')
@@ -19,7 +19,8 @@ class ImagePostForm(ModelForm):
             raise ValidationError("Location must be within the state of Bavaria (Bayern).")
         return location
 
-class CommentForm(ModelForm):
+
+class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
         fields = ['text']
