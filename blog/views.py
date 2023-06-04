@@ -105,36 +105,27 @@ class authorProfile(LoginRequiredMixin, View):
 @login_required
 def upload(request):
     if request.method == "POST":
-        title = request.POST.get('title')
-        slug = slugify(title)
-        user = request.user
-        author = request.POST.get('user')
-        excerpt = request.POST.get('text')
+        form = ImagePostForm(request.POST, request.FILES)
+        if form.is_valid():
+            image_post = form.save(commit=False)
+            image_post.user = request.user
+            image_post.author = request.user
+            image_post.status = 1
 
-        # Use request.FILES to get the uploaded image
-        image = request.FILES.get('image')
-        location = request.POST.get('location')
-        text = request.POST.get('text')
-        status = 1
+            # Save the image to Cloudinary
+            response = cloudinary.uploader.upload(form.cleaned_data['image'])
+            image_post.image = response['secure_url']
 
-        # Save the image to Cloudinary
-        response = cloudinary.uploader.upload(image)
-        image_url = response['secure_url']
+            # Generate a unique slug
+            image_post.slug = slugify(image_post.title)
+            image_post.save()
 
-        # Check if a post with the same slug already exists
-        while ImagePost.objects.filter(slug=slug).exists():
-            # If it does, add a random string to the end of the slug
-            random_string = ''.join(random.choices(string.ascii_lowercase + string.digits, k=6))
-            slug = f"{slug}-{random_string}"
+            messages.success(request, 'Post successfully uploaded!')
+            return redirect('profile')
+    else:
+        form = ImagePostForm()
 
-        # Create a new ImagePost object with the image URL
-        ImagePost.objects.create(title=title, slug=slug, user=user, author=user, image=image_url, location=location, text=text, status=0)
-
-        # add a success message
-        messages.success(request, 'Post successfully uploaded!')
-
-        return redirect('profile')
-    return render(request, 'upload.html',)
+    return render(request, 'upload.html', {'form': form})
 
 
 @login_required
