@@ -3,14 +3,14 @@
 body {
     background-color: antiquewhite;
     min-height: 100vh;
-    display: flex; 
+    display: flexbox; 
     flex-direction: column;
     font-family: roboto, sans-serif;
 }
 
 h2, h5  {
-    display: inline-block;
-    font-size: 120%;
+    /* display: inline-block; */
+    font-size: 1rem;
     color:rgba(0, 0, 0, 0.8);
     text-decoration: none;
     font-family: cinzel decorative, sans-serif;
@@ -234,18 +234,92 @@ img {
 
 /*--------------------------------- Media Queries */
 
-@media screen and (max-width: 575px)    {
-
+/* Extra Small Devices (up to 576px) */
+@media (max-width: 576px) {    
+    .navbar-brand {
+        font-size: 1.5rem;
+    }
+    .navbar-toggler-icon{
+        background-color:rgba(86, 7, 12, 0.8));
+    }
+    .navbar-toggler-icon .collapsed ::after{
+        background-color:rgba(86, 7, 12, 0.8));
+    }
+    .nav-item   {
+        font-size: 1rem;
+        background-color:rgba(86, 7, 12, 0.539);
+    }
     .maintext   {
-        text-align: left;
+        padding: 20px;
     }
-
-    .logo li   {
-        color: rgba(86, 7, 12, 0.5);
-        background-color: #ad8762ba;
-        text-decoration: 5px underline;
-        text-transform: uppercase;
-        width: auto;
+    .maintext h1 h3 {
+        font-size: 1rem;
+        padding: 10px;
     }
+    .container .post-row  {
+        width: 350px;
+        height: 415px;
+        margin: 25px;
+    }
+    .postcard-frame {
+        width: 350px;
+        height: 290px;
+      }
+    .row .col h2    {
+        font-size: 1rem;
+    }
+    .accordion  {
 
+    }
+}
+
+/* Small Devices (576px - 768px) */
+@media (min-width: 577px) and (max-width: 768px) {
+    .navbar-nav {
+        font-size: 0.6rem;
+    }
+    .navbar-nav a :hover {
+        font-size: 1rem;
+    }
+    .maintext{
+        padding: 15px;
+    }
+    .maintext h1 h3 {
+        font-size: 1rem;
+        padding: 5px;
+    }
+    .container .post-row  {
+      width: 450px;
+      height: 280px;
+    }
+    .postcard-frame {
+      width: 222px;
+      height: 248px;
+    }
+    a {
+        font-size: 0.8rem;
+    }
+    .accordion .accordion-item  {
+        font-size: 0.6rem;
+    }
+    .accordion-header   {
+        border-bottom: 1px solid rgba(95, 95, 88, 0.497);
+        padding-top: 5px;
+        font-size: 0.6rem;
+    }
+    .collapsed {
+        font-size: 0.8rem;
+    }
+}
+
+  /* Medium Devices (768px - 992px) */
+  @media (min-width: 769px) and (max-width: 992px) {
+    .container .post-row  {
+      width: 700px;
+      height: 367px;
+  }
+    .postcard-frame {
+      width: 321px;
+      height: 359px;
+    }
 }
