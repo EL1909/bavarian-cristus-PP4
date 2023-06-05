@@ -4,6 +4,8 @@
 
 [Click here to visit repository.](https://github.com/EL1909/bavarian-cristus-PP4.git)
 
+<img src="readme/CoverBC.jpg">
+
 ---
 
 - [Introduction](#bavarian-cristus)
