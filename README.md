@@ -67,38 +67,36 @@ The website is written within github development enviroment, using Django as MVC
 This is the second version i make of this website, the following list contains notes from assessor and steps taken to deliver a solution.
 
 - All text needs to have a positive font color contrast ratio.
-    - MODIFY color scheme on text areas.
+    - Modified color scheme on text areas.
 - Favicon should be included for the website.
     - Added favicon.ico to root directory.
 - The website is responsive but users need to be allowed to store and manipulate data records about a particular domain.
-    - I DONT get this one yet
+    - Responsiveness improved.
 - Ensure that all user stories have a descriptive user acceptance criteria.
     - To be implemented in future projects.
 - Error pages should be implemented.
-    - CONNECTC ERROR PAGES
+    - Error pages are implemented.
 - Clicking on like on a post results in a not found error.
-    - VERIFY LIKED LINKS 
+    - Links are verified.
 - Additionally all attempts to create a post resulted in a not found error when the post was clicked on.
-    - THIS error was caused due a permission configuration, now post can be published without admin's approval.
+    - This error was caused due a permission configuration, now post can be published without admin's approval.
 - The CRUD logic for users to create, locate, display, edit and delete records is present, but not fully implemented to work as expected.
-    - REVIEW WHOLE CRUD PROCESS AGAIN
+    - Whole CRUD operation was reviewed and fixed for publishing posts.
 - Implement form validation and verification so that users cannot submit blank or incorrectly filled forms. 
-    - I DONT KNOW HOW TO DO THIS YET
+    - Form validation implemented in text field and location when post are created.
 - All attempts to create a post resulted in a not found error when the post was clicked on.
-    - THIS error was caused due a permission configuration, now post can be published without admin's approval.
+    - This error was caused due a permission configuration, now post can be published without admin's approval.
 - The testing process needs to be documented in a little more detail to explain all the manual and automated tests undertaken including the testing steps, results and outcomes of each test and this should also include user story testing.
-    - REVIEW WHOLE CRUD PROCESS AGAIN
+    - Whole CRUD operation was reviewed and fixed for publishing posts.
 - The website needs to provide options for effective user actions, with relevant feedback for all user actions.
-    - I DONT KNOW HOW TO DO THIS YET
-
-    ## NEW FEATURES v2
-- AS A USER, I CAN SEND THE POST VIA REGULAR MAIL 
-- 
+    - Whole CRUD operation was reviewed and fixed for publishing posts.
 
 
 ## Working Methodology
 
-In order to achieve this first release, i set up tasks having in mind an Agile mindset and stablishing goals to be completed within weekly iterations.
+In order to achieve this second release, i review tasks and repair most of the mistakes that lead to a failure in the first place.
+
+There's still more features to be implemented, having in mind an Agile mindset and stablishing goals to be completed within weekly iterations.
 
 Placing myself in the user's position, and anticipating the user's wants and needs, i made myself the following questions:
 
@@ -220,7 +218,7 @@ There's three type of expected users.
 ## CRUD Capabilities
 
 All members have the ability to:
-- Create posts, to be showed upon approval.
+- Create posts.
 - View their own posts. 
 - Update and edit their own post.
 - Delete their own post.
@@ -281,20 +279,45 @@ All comments that have been made for this post can be viewd here as well; if the
 
 <img src="readme/postdetail.png">
 
+## Making a Post
 
-By clicking the "Create" button, members can create new posts.
+1. In the main page, user are able to Sign in, or SignUp for a new Account.
 
+<img src="readme/SignIn.jpg">
+
+2. Once logged in, User can access it's profile by clicking his name on the top bar or in the PostCard name in the home Page
+
+<img src="readme/Accessprofile.png">
+
+3. By clicking the "Create new Post" button, members can create new posts.
+
+
+<img src="readme/create01.png">
+
+4. User must:
+    1. Writte a title for the image. 
+    2. Select an image to upload.
+    3. Introduce a location where the image was taken, there's form validation in this field to include the word "Bayern" as all images in the website must be from within Bayern.
+    4. User Must writte a brief review on the picture, There's form validation to ha at least 6 characters in the description.
 
 <img src="readme/create.png">
 
+5. If all fields are filled correctly,
+user will be sent to it's profile page, where can see the new post.
 
-By clicking the "Edit" button, members can edit their post's Title, Location, Description Text and replace the uploaded image; they can also make a post not publish.
+<img src="readme/create02.png">
+
+6. By clicking the image, or the title, we can access the image Post page
+
+<img src="readme/postimage.png">
+
+7. By clicking the "Edit" button, members can edit their post's Title, Location, Description Text and replace the uploaded image; they can also make a post not publish.
 
 
 <img src="readme/edit.png">
 
 
-By clicking the "Delete" button, members can delete their post, the button leads to a confirmation page for this action.
+8. By clicking the "Delete" button, members can delete their post, the button leads to a confirmation page for this action.
 
 
 <img src="readme/confirmdelete.png">
@@ -444,9 +467,6 @@ I ran test manually to verify message functionallity.
 <img src="readme/messages4.png">
 
 
-**NOTE: As i was doing the manual testing; somehow the CSS stop applying to the h2 elements, you can see the difference in the screenshots.** 
-
-
 ## Automated Testing
 
 I did wrote three automates test following the Django Blog walkthru project, however i didn't had time to actually run them.
@@ -496,9 +516,6 @@ I followed the stepst as Follows:
 10. Create a Procfile on the top level directory and add web: gunicorn **bcristus**.wsgi
 11. Allauth installed to create user login functionality and updated to requirements.txt
 12. Crispyforms installed to allow members comment functionality and updated to requirements.txt.
-
-
-
 
 
 ### In Heroku:
@@ -555,13 +572,7 @@ deploy from branch, selected GitHub branch and clicked on Deploy button.
 
 ### Unfixed:
 
-1. As i was doing the manual testing; somehow the style.css stop applying to the h2 elements, you can see the difference in the screenshots, wHich cause a major damage to the overall UI performance.
-    
-    As you can see in my commits on gitpod; i did not had the time to review this bug prior submission date.
-
-2. I Still haven't found the way to make the alerts to appear without separating the neightbord containers. I know it must be a very simple solution, however i'm stuck with information
-
-3. Overall code revision in order to make it more efficient, by loading small scripts without needing to update the whole page, when liking a post for example.
+1. Overall code revision in order to make it more efficient, by loading small scripts without needing to update the whole page, when liking a post for example.
 
 
 ### Fixed
@@ -595,6 +606,10 @@ deploy from branch, selected GitHub branch and clicked on Deploy button.
 
 ## Credits
 
+- All media content uploaded to the website belong to me.
+
+## Acknowledgements
+
 - First of all to my family, for allowing me the time to accomplish this classes.
 - I'll like to give a credit to [Paul Thomas O'Riordan](https://github.com/paulie-o74) for hosting our weekly thursday meetings, and to "The people from the future", [Tony Albanese](https://github.com/tony-albanese), [Roshna Vakkeel](https://github.com/RoshnaVakkeel) and [Vivi Gnutz](https://github.com/vivignutz).
 
@@ -602,9 +617,6 @@ I found their guidance not just helpful but a "must" condition in order to organ
 
 Without them it would have been totally unrealistic to complete this project in this timeframe.
 - [Chuck Severance Youtube's channel.](https://www.youtube.com/@ChuckSeverance) With Mr. Severance i took a deeper diving into Database Models and MVC framework's theory.
-- All media content uploaded to the website belong to me.
-
-
 
 Notes
 
