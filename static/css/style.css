@@ -2,8 +2,8 @@
 
 body {
     background-color: antiquewhite;
-    min-height: 100vh;
-    display: flexbox; 
+    min-height: 100%;
+    display:flexbox; 
     flex-direction: column;
     font-family: roboto, sans-serif;
 }
@@ -139,7 +139,7 @@ img {
 
 .container .postcard-frame .postcard-image {
     /* Make the post image adapt its size to the post-frame */
-    height: auto;
+    height: 100%;
     width: auto;
     object-fit: contain;
     overflow: hidden;

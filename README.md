@@ -17,7 +17,7 @@
     - [Database Relationships](#database-relationships)
     - [Models](#models)
 - [Users Types](#users-types)
-- [CRUD Capabilities](#crud-capabilities)
+- [CRUD Operations](#crud-operations)
 - [Features](#features)
     - [Design and Colors](#design-and-colors)
     - [Navigation](#navigation)
@@ -279,7 +279,9 @@ All comments that have been made for this post can be viewd here as well; if the
 
 <img src="readme/postdetail.png">
 
-## Making a Post
+# CRUD Operations
+
+## Creating a Post
 
 1. In the main page, user are able to Sign in, or SignUp for a new Account.
 
@@ -311,13 +313,18 @@ user will be sent to it's profile page, where can see the new post.
 
 <img src="readme/postimage.png">
 
-7. By clicking the "Edit" button, members can edit their post's Title, Location, Description Text and replace the uploaded image; they can also make a post not publish.
+---
+## Edit a Post
+
+1. By clicking the "Edit" button, members can edit their post's Title, Location, Description Text and replace the uploaded image; they can also make a post not publish.
 
 
 <img src="readme/edit.png">
 
+---
+## Delete a Post
 
-8. By clicking the "Delete" button, members can delete their post, the button leads to a confirmation page for this action.
+1. By clicking the "Delete" button, members can delete their post, the button leads to a confirmation page for this action.
 
 
 <img src="readme/confirmdelete.png">
@@ -325,13 +332,6 @@ user will be sent to it's profile page, where can see the new post.
 
 At the bottom of the post page commes a map, the members will have the opportunity to tag the location where they took the photo. Is not properly connected yet.
 
-
-### Profile page
-
-By clicking in the Member name, he will access his profile page, where he can find a button to upload new post, and all content that was already uploaded.
-
-
-<img src="readme/Profile.png">
 
 ### About page
 
@@ -348,49 +348,9 @@ Inside the Post detail, there is an icon for the user to like the post. If the u
 
 ### CRUD
 
-- I ran manual tests to create a new User.
+- I ran manual tests to create a new User. 
 
-1. Click "Register" button at the left-top corner.
-
-<img src="readme/register1.png">
-
-
-2. Fill fields for Username, email (not required), Password and confirmation.
-    - Password Cannot be similar than username.
-
-    <img src="readme/register2.png">
-
-
-3. User is Successfully Created.
-    - Can See username and logged in icon.
-    - Can Click icon  at the top-left corner to Logout
-
-    <img src="readme/register3.png">
-
-Once the user was created, 
-
-- I ran manual tests to create a post.
-
-1. Click on the username and inside the page, click the "Create new Post" button.
-
-<img src="readme/create1.png">
-
-
-2. Complete all fields and upload an image, i did update an image intended to be replaced.
-
-
-<img src="readme/create2.png">
-
-
-3. The post shows succesfully in the user's profile.
-
-
-<img src="readme/create3.png">
-
-
-Once the post was created, 
-
--   I ran manual test to Edit a Post.
+- I ran manual test to Edit a Post.
 
 1. Click on the post's title in order to enter the Post Details page, Once inside, click on the "Edit" button.
 
@@ -445,26 +405,24 @@ I ran test manually to verify message functionallity.
 
 1. Visiting the site without registration, messages functionallity is hidden.
 
-
-<img src="readme/messages1.png">
-
-
-2. From within a members account, the "Leave a Message:" field appears, Writte the message and submit.
+<img src="readme/nocomments.png">
 
 
-<img src="readme/messages2.png">
+2. From within a member's account, the "Leave a Message:" field appears, Writte the message and submit.
+
+<img src="readme/comment1.png">
 
 
-3. The member is notified that this comment requires to be approved ny admin.
+3. The member is notified that this comment requires to be approved by admin.
  
 
-<img src="readme/messages3.png">
+<img src="readme/comments2.png">
 
 
 4. Once the comment is approvd by the Admin, will show in the post detail page.
 
 
-<img src="readme/messages4.png">
+<img src="readme/comment3.png">
 
 
 ## Automated Testing
